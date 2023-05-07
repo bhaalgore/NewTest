@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ui/assets/closenoticon.png</file>
+        <file>ui/assets/menuicon.png</file>
+        <file>ui/BottomScreen/BottomScreen.qml</file>
+        <file>ui/ControlPanel/ControlPanel.qml</file>
+        <file>ui/Notification/NotificationArea.qml</file>
+        <file>ui/Notification/Notification.qml</file>
+        <file>main.qml</file>
+        <file>ui/assets/map.png</file>
+        <file>ui/assets/favicon.png</file>
+    </qresource>
+</RCC>
