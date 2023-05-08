@@ -39,6 +39,7 @@ Rectangle {
             id: rowLayout
             Layout.preferredWidth: parent.width
             Layout.fillWidth: true
+            Layout.topMargin: 5
 
             Text {
                 id: titleText
@@ -80,6 +81,7 @@ Rectangle {
             Layout.fillWidth: true
             Layout.leftMargin: 5
             Layout.rightMargin: 5
+            Layout.bottomMargin: 5
             maximumLineCount: 5
             wrapMode: Text.Wrap
             elide: Text.ElideRight
