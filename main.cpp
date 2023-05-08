@@ -11,10 +11,13 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
     LogicPlugin::NotificationModel notificationModel;
-    int pos = 0;
+
     QQmlApplicationEngine engine;
     QQmlEngine Qengine;
     QList<QQuickWindow*> windows;
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QSize screenSize = screen->size();
+    int screenHeight = screenSize.height();
     QObject::connect(&notificationModel, &QAbstractItemModel::rowsInserted, [&](const QModelIndex &parent, int first, int last) {
         for (int i = first; i <= last; ++i) {
             QQmlComponent component(&Qengine, QUrl(QStringLiteral("qrc:/NotificationWindow.qml")));
@@ -28,8 +31,12 @@ int main(int argc, char *argv[])
                                                                           LogicPlugin::NotificationModel::MessageRole));
                     window->setProperty("type", notificationModel.data(notificationModel.index(i, 0),
                                                                        LogicPlugin::NotificationModel::TypeRole));
-                    window->setProperty("pos", QVariant::fromValue(pos));
-                    pos+=85;
+                    qreal pos = 0;
+                    if(windows.count())
+                     pos = windows.back()->property("y").toReal();
+                    else pos = screenHeight;
+                    pos-=85;
+                    window->setProperty("y", QVariant::fromValue(pos));
                     window->setClearBeforeRendering(true);
                     window->show();
                     windows.append(window);
