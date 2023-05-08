@@ -1,9 +1,10 @@
 #include "notify_model.h"
-
+#include "notification_entity.h"
 LogicPlugin::NotificationModel::NotificationModel(QObject *parent) : QAbstractListModel(parent)
 {
     logger.openDatabase("QSQLITE", "./notify_db.db");
     logger.createTable();
+    _timerId = startTimer(1000);
 }
 
 int LogicPlugin::NotificationModel::rowCount(const QModelIndex &parent) const
@@ -57,6 +58,16 @@ void LogicPlugin::NotificationModel::removeNotification(int index)
     beginRemoveRows(QModelIndex(), index, index);
     _notifications.removeAt(index);
     endRemoveRows();
+}
+
+void LogicPlugin::NotificationModel::timerEvent(QTimerEvent *event)
+{
+    if(_timerId!=event->timerId())
+        return;
+    if(count()>10)
+        return;
+    auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);
+    addNotification(myImpl);
 }
 void LogicPlugin::NotificationModel::clearNotifications()
 {

@@ -6,6 +6,7 @@
 
 #include <QAbstractListModel>
 #include <QPointer>
+#include <QTimerEvent>
 
 namespace LogicPlugin {
 /*!
@@ -46,7 +47,7 @@ public:
          * индексом
          */
     void removeNotification(int index);
-
+    void timerEvent(QTimerEvent *event) override;
     /*!
          * \brief Метод, удаляющий информацию о всех уведомлениях в модели
          */
@@ -62,7 +63,7 @@ private:
          * \brief logger Ссылка на класс, логирующий в бд
          */
     NotificationLogger &logger = NotificationLogger::instance();
-
+    qint32 _timerId;
     /*!
          * \brief Список, в котором хранится информация об всех уведомления в модели
          */
