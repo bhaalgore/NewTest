@@ -48,6 +48,7 @@ ApplicationWindow {
         visible: notifyList.count > 0
         ListView {
             id: notifyList
+            boundsBehavior: Flickable.StopAtBounds
             implicitWidth: contentItem.childrenRect.width
             implicitHeight: contentItem.childrenRect.height
             spacing: 10

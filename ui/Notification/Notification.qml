@@ -42,7 +42,7 @@ Rectangle {
 
             Text {
                 id: titleText
-                text: "asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"//title
+                text: title
                 elide: Text.ElideRight
                 Layout.leftMargin: 5
                 Layout.maximumWidth: parent.width - closeNotificationIcon.width
@@ -76,7 +76,7 @@ Rectangle {
         }
 
         Text {
-            text: "asdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"//message
+            text: message
             Layout.fillWidth: true
             Layout.leftMargin: 5
             Layout.rightMargin: 5
