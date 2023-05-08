@@ -2,37 +2,66 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.15
 import "ui/ControlPanel"
 import "ui/BottomScreen"
 import "ui/Notification"
 
 ApplicationWindow {
     id: mainWindow
-//    flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint | Qt.Window
     width: 900
     height: 600
-    minimumWidth: 900
-    minimumHeight: 600
+
+    minimumWidth: width
+    minimumHeight: height
+    maximumWidth: width
+    maximumHeight: height
+
     visible: true
     color: "transparent"
 
     Rectangle {
-        color: "red"
         width: mainWindow.width
         height: mainWindow.height
-        radius: 10
+        color: "transparent"
 
+        // Left field
         Rectangle {
             id: textColumn
-            color: "red"
-            width: mainWindow.width / 4
+            color: "#272930"
+            opacity: 0.9
+            width: 216
+
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.right:pageColumn.left
-            radius: 10
-            x: width/2
-            y: height/4
+            anchors.right: pageColumn.left
+
+            Image {
+                id: micranLogo
+                source: "ui/assets/micran-logo.png"
+                width: 24
+                height: 36
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                    leftMargin: 20
+                    topMargin: 25
+                }
+            }
+
+            Text {
+                text: "Micran\nNotification Manager"
+                font.pixelSize: 14
+                font.family: "Arial"
+                color: "#DDDDDD"
+                anchors {
+                    left: micranLogo.right
+                    top: micranLogo.top
+                    leftMargin: 8
+                }
+            }
 
             Rectangle {
                 id: rec
@@ -41,6 +70,8 @@ ApplicationWindow {
                 anchors.centerIn: parent
 
                 ColumnLayout {
+
+                    // Main
                     Button {
                         Layout.preferredHeight: rec.height/4
                         Layout.preferredWidth: rec.width
@@ -61,6 +92,7 @@ ApplicationWindow {
                         }
                     }
 
+                    // Archive
                     Button {
                         Layout.preferredHeight: rec.height/4
                         Layout.preferredWidth: rec.width
@@ -81,6 +113,7 @@ ApplicationWindow {
                         }
                     }
 
+                    // Advice
                     Button {
                         Layout.preferredHeight: rec.height/4
                         Layout.preferredWidth: rec.width
@@ -101,6 +134,7 @@ ApplicationWindow {
                         }
                     }
 
+                    // Settings
                     Button {
                         Layout.preferredHeight: rec.height/4
                         Layout.preferredWidth: rec.width
@@ -124,14 +158,14 @@ ApplicationWindow {
             }
         }
 
+        // Right field
         Rectangle {
             id: pageColumn
             anchors.left: textColumn.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.right:parent.right
-            color: "black"
-            radius: 10
+            color: "#1E1E1E"
             width: mainWindow.width - textColumn.width
             Loader {
                     id: pageLoader
