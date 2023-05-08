@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     int pos = 0;
     QQmlApplicationEngine engine;
     QQmlEngine Qengine;
+    QList<QQuickWindow*> windows;
     QObject::connect(&notificationModel, &QAbstractItemModel::rowsInserted, [&](const QModelIndex &parent, int first, int last) {
         for (int i = first; i <= last; ++i) {
             QQmlComponent component(&Qengine, QUrl(QStringLiteral("qrc:/NotificationWindow.qml")));
@@ -29,8 +30,19 @@ int main(int argc, char *argv[])
                                                                        LogicPlugin::NotificationModel::TypeRole));
                     window->setProperty("pos", QVariant::fromValue(pos));
                     pos+=85;
-                    //window->setClearBeforeRendering(true);
-                    //window->show();
+                    window->setClearBeforeRendering(true);
+                    window->show();
+                    windows.append(window);
+                    QObject::connect(window, &QQuickWindow::visibleChanged, [&windows,window]() {
+                        qreal closedWindowPos = window->property("y").toReal();
+                        for (auto& w : windows) {
+                            qreal wPos = w->property("y").toReal();
+                            if (w != window && wPos < closedWindowPos) {
+                                w->setProperty("y", QVariant::fromValue(wPos + 85));
+                            }
+                        }
+                        windows.removeOne(window);
+                    });
                 }
                 else {
                     delete object;

@@ -8,7 +8,7 @@ Window {
     property string message: ""
     property string type: ""
     property int pos:0
-    flags: Qt.FramelessWindowHint |  Qt.WindowStaysOnTopHint | Qt.Tool
+    flags: Qt.FramelessWindowHint
     height:75
     width: 300
     maximumHeight: height
