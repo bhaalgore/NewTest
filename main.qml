@@ -23,6 +23,8 @@ ApplicationWindow {
 
     NotificationArea {
         visible: notifyList.count > 0
+        width: notifyList.width
+        height: notifyList.height
         ListView {
             id: notifyList
             boundsBehavior: Flickable.StopAtBounds

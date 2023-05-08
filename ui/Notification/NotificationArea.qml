@@ -7,7 +7,4 @@ Window {
     flags: Qt.WA_TranslucentBackground | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint
 
     color: "#00000000"
-    visible: true
-    height: contentItem.childrenRect.height//mainWindow.height / 4 + 15
-    width: contentItem.childrenRect.width//mainWindow.width / 5
 }

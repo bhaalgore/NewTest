@@ -9,11 +9,10 @@ Rectangle {
     property string message: ""
     property string state: ""
 
+    signal close()
+
     height: childrenRect.height
     width: mainWindow.width / 6
-    visible: true
-
-    signal close()
 
     Component.onCompleted: {
             switch (state) {
