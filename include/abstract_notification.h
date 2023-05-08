@@ -21,8 +21,11 @@ namespace LogicPlugin {
          * \param description - строка, в которой храниться более подробное описание уведомления
          * \param type - тип уведомления
          */
-        explicit AbstractNotification(QString title, QString description, uint16_t typeID);
+        explicit AbstractNotification(const QString &title, const QString &description, uint16_t typeID);
         ~AbstractNotification() = default;
+
+        int32_t id() const;
+        void setId(int32_t id);
 
         /*!
          * \brief Метод, возвращающий значения переменной _title
@@ -55,6 +58,8 @@ namespace LogicPlugin {
         void setType(const uint16_t &typeID);
 
     private:
+        int32_t _id { -1 };
+
         /*!
          * \brief Приватное поле класса, хранящее название переменной уведомления
          */

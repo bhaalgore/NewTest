@@ -18,6 +18,8 @@ SOURCES += \
         include/type_manager.cpp \
         main.cpp
 
+INCLUDEPATH += $$PWD/include
+
 RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

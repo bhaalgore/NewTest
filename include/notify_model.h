@@ -23,7 +23,8 @@ public:
          */
     enum NotificationRoles
     {
-        TitleRole = Qt::UserRole + 1,
+        IdRole = Qt::UserRole + 1,
+        TitleRole,
         MessageRole,
         TypeRole
     };
@@ -39,18 +40,18 @@ public:
     /*!
          * \brief Метод, с помощью которого в модель добавляются данные о новом уведомлении
          */
-    void addNotification(QPointer<LogicPlugin::AbstractNotification> notification);
+    void addNotification(LogicPlugin::AbstractNotification *notification);
 
     /*!
          * \brief Метод, с помощью которого из модели удаляются данные об уведомлении с определенным
          * индексом
          */
-    void removeNotification(int index);
+    Q_INVOKABLE void removeNotification(int id);
 
     /*!
          * \brief Метод, удаляющий информацию о всех уведомлениях в модели
          */
-    void clearNotifications();
+    Q_INVOKABLE void clearNotifications();
 
     /*!
          * \brief Метод, возвращающий количество уведомлений в модели
@@ -58,6 +59,9 @@ public:
     int count() const;
 
 private:
+    int32_t avalaibleId() const;
+
+
     /*!
          * \brief logger Ссылка на класс, логирующий в бд
          */
@@ -66,7 +70,7 @@ private:
     /*!
          * \brief Список, в котором хранится информация об всех уведомления в модели
          */
-    QList<QPointer<LogicPlugin::AbstractNotification>> _notifications;
+    std::vector<std::unique_ptr<LogicPlugin::AbstractNotification>> _notifications;
 };
 }
 

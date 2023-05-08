@@ -11,21 +11,24 @@ int LogicPlugin::NotificationModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return _notifications.count();
+    return _notifications.size();
 }
 
 QVariant LogicPlugin::NotificationModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() > _notifications.size())
         return QVariant();
-    const auto row = _notifications.at(index.row());
+
+    const auto notification = _notifications.at(index.row()).get();
     switch (role) {
+    case IdRole:
+        return notification->id();
     case TitleRole:
-        return row->title();
+        return notification->title();
     case MessageRole:
-        return row->description();
+        return notification->description();
     case TypeRole:
-        return row->type();
+        return notification->type();
     default:
         return QVariant();
     }
@@ -34,30 +37,40 @@ QVariant LogicPlugin::NotificationModel::data(const QModelIndex &index, int role
 QHash<int, QByteArray> LogicPlugin::NotificationModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QAbstractItemModel::roleNames();
+    roles[IdRole] = "id";
     roles[TitleRole] = "title";
     roles[MessageRole] = "message";
     roles[TypeRole] = "type";
     return roles;
 }
 
-void LogicPlugin::NotificationModel::addNotification(
-    QPointer<LogicPlugin::AbstractNotification> notification)
+void LogicPlugin::NotificationModel::addNotification(LogicPlugin::AbstractNotification *notification)
 {
-    beginInsertRows(QModelIndex(), _notifications.count(), _notifications.count());
-    _notifications.push_back(notification);
+    beginInsertRows(QModelIndex(), _notifications.size(), _notifications.size());
+    notification->setId(avalaibleId());
+    _notifications.emplace_back(notification);
     logger.insert(notification->title(), notification->description(),notification->type(),
                   QDate::currentDate());
     endInsertRows();
 }
 
-void LogicPlugin::NotificationModel::removeNotification(int index)
+void LogicPlugin::NotificationModel::removeNotification(int id)
 {
-    if (index > _notifications.size())
+    // Поскольку уведомления отсортированы по id, то можем применять бинарный поиск
+    const auto it = std::lower_bound(_notifications.begin(), _notifications.end(), id,
+                                     [](const auto &notification, auto id) {
+                                         return notification->id() < id;
+                                     });
+
+    if (it == _notifications.end())
         return;
+
+    const auto index = std::distance(_notifications.begin(), it);
     beginRemoveRows(QModelIndex(), index, index);
-    _notifications.removeAt(index);
+    _notifications.erase(it);
     endRemoveRows();
 }
+
 void LogicPlugin::NotificationModel::clearNotifications()
 {
     beginResetModel();
@@ -67,5 +80,10 @@ void LogicPlugin::NotificationModel::clearNotifications()
 
 int LogicPlugin::NotificationModel::count() const
 {
-    return _notifications.count();
+    return _notifications.size();
+}
+
+int32_t LogicPlugin::NotificationModel::avalaibleId() const
+{
+    return _notifications.empty() ? 0 : _notifications.back()->id() + 1;
 }

@@ -1,12 +1,22 @@
 #include "abstract_notification.h"
 
-LogicPlugin::AbstractNotification::AbstractNotification(QString title,
-                                                        QString description,
-                                                        uint16_t typeID)
+LogicPlugin::AbstractNotification::AbstractNotification(const QString &title,
+                                                        const QString &description,
+                                                        uint16_t typeID) :
+    _title(title),
+    _description(description)
 {
-    _title = title;
-    _description = description;
     setType(typeID);
+}
+
+int32_t LogicPlugin::AbstractNotification::id() const
+{
+    return _id;
+}
+
+void LogicPlugin::AbstractNotification::setId(int32_t id)
+{
+    _id = id;
 }
 
 QString LogicPlugin::AbstractNotification::title() const

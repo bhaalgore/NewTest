@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "G:\Qt\repos\NewTest\include\notify_model.h"
-#include "G:\Qt\repos\NewTest\include\notification_entity.h"
+#include "notify_model.h"
+#include "notification_entity.h"
 #include <QQmlContext>
 #include <QDebug>
 
@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
     notificationModel.addNotification(myImpl);
     auto myImpl1 = new LogicPlugin::NotificationEntity("Высокий уровень шума", "Очень важная информация. Очень важная информация.", 3);
     notificationModel.addNotification(myImpl1);
+    auto myImpl2 = new LogicPlugin::NotificationEntity("Высокий уровень шума", "Очень важная информация. Очень важная информация.", 3);
+    notificationModel.addNotification(myImpl2);
 //    notificationModel.addNotification("Обнаружена цель в SportCenter", "Очень важная информация. Очень важная информация.", 0);
 //    notificationModel.addNotification("Камера не доступна!", "Очень важная информация. Очень важная информация.", 1);
 //    notificationModel.addNotification("Высокий уровень шума", "Очень важная информация. Очень важная информация.", 2);

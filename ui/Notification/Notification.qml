@@ -9,10 +9,11 @@ Rectangle {
     property string message: ""
     property string state: ""
 
-    height: mainWindow.height / 16
+    height: childrenRect.height
     width: mainWindow.width / 6
-    visible:true
+    visible: true
 
+    signal close()
 
     Component.onCompleted: {
             switch (state) {
@@ -30,62 +31,68 @@ Rectangle {
             }
         }
 
-    Image {
-        anchors{
-            top:parent.top
-            right:parent.right
-            topMargin: 14
-            rightMargin: 22
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: rec.visible = false
-
-        }
-
-        id: closeNotificationIcon
-        fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/closenoticon.png"
-    }
-
     ColumnLayout {
         id: columnLayout
-        width:parent.width
+        width: parent.width
 
-//            Image {
-//                Layout.alignment: Qt.AlignRight
-//                Layout.topMargin: 14
-//                Layout.rightMargin: 22
-//                MouseArea {
-//                    anchors.fill: parent
-//                    onClicked: rec.visible = false
-
-//                }
-//                id: closeNotificationIcon
-//                fillMode: Image.PreserveAspectFit
-//                source: "qrc:/ui/assets/closenoticon.png"
-//            }
+        RowLayout {
+            id: rowLayout
+            Layout.preferredWidth: parent.width
+            Layout.fillWidth: true
 
             Text {
-                text: title
-                Layout.leftMargin: 7
-                Layout.topMargin: 10
+                id: titleText
+                text: "asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"//title
+                elide: Text.ElideRight
+                Layout.leftMargin: 5
+                Layout.maximumWidth: parent.width - closeNotificationIcon.width
+                                     - titleText.Layout.leftMargin
+                                     - closeNotificationIcon.Layout.rightMargin
+                                     - rowLayout.spacing
+
                 color: "#DDDDDD"
-                font.pointSize: ((rec.height/5) + (rec.width /10))/4
                 font.weight: "DemiBold"
                 font.family: "OpenSans"
+                HoverHandler{
+                    id: titleHoverHandler
+                }
+                ToolTip {
+                    text: parent.text
+                    visible: titleHoverHandler.hovered && parent.truncated
+                    delay: 500
+                }
             }
-
-
-        Text {
-            text: message
-            Layout.leftMargin: 7
-            color: "#DDDDDD"
-            font.pointSize: ((rec.height/5) + (rec.width /10))/6
-            font.family: "OpenSans"
+            Image {
+                id: closeNotificationIcon
+                Layout.alignment: Qt.AlignRight
+                Layout.rightMargin: 5
+                fillMode: Image.PreserveAspectFit
+                source: "qrc:/ui/assets/closenoticon.png"
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: rec.close()
+                }
+            }
         }
 
+        Text {
+            text: "asdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"//message
+            Layout.fillWidth: true
+            Layout.leftMargin: 5
+            Layout.rightMargin: 5
+            maximumLineCount: 5
+            wrapMode: Text.Wrap
+            elide: Text.ElideRight
+            color: "#DDDDDD"
+            font.family: "OpenSans"
+            HoverHandler{
+                id: messageHoverHandler
+            }
+            ToolTip {
+                text: parent.text
+                visible: messageHoverHandler.hovered && parent.truncated
+                delay: 500
+            }
+        }
     }
-
 }
