@@ -27,17 +27,17 @@ namespace LogicPlugin {
         /*!
          * \brief Метод, возвращающий значения переменной _title
          */
-        QString title() const;
+       Q_INVOKABLE QString title() const;
 
         /*!
          * \brief Метод, возвращающий значения переменной _description
          */
-        QString description() const;
+       Q_INVOKABLE QString description() const;
 
         /*!
          * \brief Метод, возвращающий тип уведомления
          */
-        QString type() const;
+       Q_INVOKABLE QString type() const;
 
         /*!
          * \brief Метод, меняющий значение переменной _title

@@ -9,5 +9,9 @@
         <file>main.qml</file>
         <file>ui/assets/map.png</file>
         <file>ui/assets/favicon.png</file>
+        <file>ui/Notification/MyPage.qml</file>
+        <file>ui/Notification/MyPage1.qml</file>
+        <file>ui/Notification/MyPage2.qml</file>
+        <file>ui/Notification/MyPage3.qml</file>
     </qresource>
 </RCC>

@@ -31,8 +31,6 @@ ApplicationWindow {
             anchors.bottom: parent.bottom
             anchors.right:pageColumn.left
             radius: 10
-            x: width/2
-            y: height/4
 
             Rectangle {
                 id: rec

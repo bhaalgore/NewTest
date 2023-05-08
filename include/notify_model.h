@@ -37,35 +37,35 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     /*!
-         * \brief Метод, с помощью которого в модель добавляются данные о новом уведомлении
-         */
+     * \brief Метод, с помощью которого в модель добавляются данные о новом уведомлении
+     */
     void addNotification(QPointer<LogicPlugin::AbstractNotification> notification);
 
     /*!
-         * \brief Метод, с помощью которого из модели удаляются данные об уведомлении с определенным
-         * индексом
-         */
+     * \brief Метод, с помощью которого из модели удаляются данные об уведомлении с определенным
+     * индексом
+     */
     void removeNotification(int index);
 
     /*!
-         * \brief Метод, удаляющий информацию о всех уведомлениях в модели
-         */
+     * \brief Метод, удаляющий информацию о всех уведомлениях в модели
+     */
     void clearNotifications();
 
     /*!
-         * \brief Метод, возвращающий количество уведомлений в модели
-         */
+     * \brief Метод, возвращающий количество уведомлений в модели
+     */
     int count() const;
 
 private:
     /*!
-         * \brief logger Ссылка на класс, логирующий в бд
-         */
+     * \brief logger Ссылка на класс, логирующий в бд
+     */
     NotificationLogger &logger = NotificationLogger::instance();
 
     /*!
-         * \brief Список, в котором хранится информация об всех уведомления в модели
-         */
+     * \brief Список, в котором хранится информация об всех уведомления в модели
+     */
     QList<QPointer<LogicPlugin::AbstractNotification>> _notifications;
 };
 }
