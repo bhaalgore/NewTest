@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "/home/poshspice/repos/NewTest/include/notify_model.h"
-#include "/home/poshspice/repos/NewTest/include/notification_entity.h"
+#include "include/notify_model.h"
+#include "include/notification_entity.h"
 #include <QQmlContext>
 #include <QDebug>
 #include <QtQuick>
