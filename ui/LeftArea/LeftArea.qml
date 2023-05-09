@@ -1,6 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.15
 
 
 Rectangle {
@@ -13,64 +12,39 @@ Rectangle {
     anchors.bottom: parent.bottom
     anchors.right: rightField.left
 
+    ColumnLayout {
+        spacing: 51
 
-    Image {
-        id: micranLogo
-        source: "qrc:/ui/assets/micran-logo.png"
-        width: 24
-        height: 36
-        anchors {
-            left: parent.left
-            top: parent.top
-            leftMargin: 20
-            topMargin: 25
-        }
-    }
-
-    Text {
-        text: "Micran\nNotification Manager"
-        font.pixelSize: 14
-        font.family: "Arial"
-        color: "#DDDDDD"
-        anchors {
-            left: micranLogo.right
-            top: micranLogo.top
-            leftMargin: 8
-        }
-    }
-
-    // Menu
-    Rectangle {
-        id: menu
-        color: "transparent"
-        height: 160
-        width: 194
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            top: micranLogo.bottom
-
-            leftMargin: 10
-            rightMargin: 10
-            topMargin: 44
+        AppName {
+        id: appName
         }
 
-        ColumnLayout {
-            spacing: 7
+        // Menu
+        Rectangle {
+            id: menu
+            color: "transparent"
+            height: 160
+            width: 194
+            Layout.leftMargin: 10
 
-            MenuMain {
-                id: menuMain
-            }
+            ColumnLayout {
+                spacing: 7
 
-            MenuArchive{
-                id: menuArchive
-            }
+                MenuMain {
+                    id: menuMain
+                }
 
-            MenuAdvices {
-                id: menuAdvices
-            }
+                MenuArchive{
+                    id: menuArchive
+                }
 
-            MenuSettings {
-                id: menuSettings
+                MenuAdvices {
+                    id: menuAdvices
+                }
+
+                MenuSettings {
+                    id: menuSettings
+                }
             }
         }
     }

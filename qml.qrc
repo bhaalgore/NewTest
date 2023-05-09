@@ -23,5 +23,6 @@
         <file>ui/LeftArea/MenuArchive.qml</file>
         <file>ui/LeftArea/MenuAdvices.qml</file>
         <file>ui/LeftArea/MenuSettings.qml</file>
+        <file>ui/LeftArea/AppName.qml</file>
     </qresource>
 </RCC>
