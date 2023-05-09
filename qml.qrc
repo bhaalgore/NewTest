@@ -13,5 +13,8 @@
         <file>ui/Notification/MyPage1.qml</file>
         <file>ui/Notification/MyPage2.qml</file>
         <file>ui/Notification/MyPage3.qml</file>
+        <file>ui/assets/micran-logo.png</file>
+        <file>ui/assets/icon-home-blue.png</file>
+        <file>ui/LeftArea/LeftArea.qml</file>
     </qresource>
 </RCC>
