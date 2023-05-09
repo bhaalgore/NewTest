@@ -12,7 +12,7 @@ Rectangle {
 
     Image {
         id: micranLogo
-        source: "ui/assets/micran-logo.png"
+        source: "qrc:/ui/assets/micran-logo.png"
         width: 24
         height: 36
         anchors {
@@ -66,7 +66,7 @@ Rectangle {
 
                 Image {
                     id: menuMainIcon
-                    source: "ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/icon-home-blue.png"
                     height: 20
                     width: 20
 
@@ -115,7 +115,7 @@ Rectangle {
 
                 Image {
                     id: menuArchiveIcon
-                    source: "ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/icon-home-blue.png"
                     height: 20
                     width: 20
 
@@ -164,7 +164,7 @@ Rectangle {
 
                 Image {
                     id: menuAdviceIcon
-                    source: "ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/icon-home-blue.png"
                     height: 20
                     width: 20
 
@@ -213,7 +213,7 @@ Rectangle {
 
                 Image {
                     id: menuSettingsIcon
-                    source: "ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/icon-home-blue.png"
                     height: 20
                     width: 20
 
