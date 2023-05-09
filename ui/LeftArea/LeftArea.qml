@@ -3,7 +3,7 @@ import QtQuick.Layouts 1.15
 
 Rectangle {
     color: "#272930"
-    opacity: 0.95
+    opacity: 1
     width: 216
     anchors.left: parent.left
     anchors.top: parent.top
@@ -80,13 +80,13 @@ Rectangle {
 
                 Text {
                     id: menuMainText
-                    color: "#0BBCD1"
                     text: "Главная"
                     font.pixelSize: 16
                     font.family: "Arial"
                     font.weight: Font.DemiBold
                     font.letterSpacing: 1
-
+                    color: (rightFieldLoader.source
+                            == "qrc:/ui/Notification/MyPage.qml") ? "#0BBCD1" : "#DDDDDD"
                     anchors {
                         left: menuMainIcon.right
                         verticalCenter: parent.verticalCenter
@@ -129,13 +129,13 @@ Rectangle {
 
                 Text {
                     id: menuArchiveText
-                    color: "#0BBCD1"
                     text: "Архив"
                     font.pixelSize: 16
                     font.family: "Arial"
                     font.weight: Font.DemiBold
                     font.letterSpacing: 1
-
+                    color: (rightFieldLoader.source
+                            == "qrc:/ui/Notification/MyPage1.qml") ? "#0BBCD1" : "#DDDDDD"
                     anchors {
                         left: menuArchiveIcon.right
                         verticalCenter: parent.verticalCenter
@@ -178,13 +178,13 @@ Rectangle {
 
                 Text {
                     id: menuAdviceText
-                    color: "#0BBCD1"
                     text: "Советы"
                     font.pixelSize: 16
                     font.family: "Arial"
                     font.weight: Font.DemiBold
                     font.letterSpacing: 1
-
+                    color: (rightFieldLoader.source
+                            == "qrc:/ui/Notification/MyPage2.qml") ? "#0BBCD1" : "#DDDDDD"
                     anchors {
                         left: menuAdviceIcon.right
                         verticalCenter: parent.verticalCenter
@@ -227,13 +227,13 @@ Rectangle {
 
                 Text {
                     id: menuSettingsText
-                    color: "#0BBCD1"
                     text: "Настройки"
                     font.pixelSize: 16
                     font.family: "Arial"
                     font.weight: Font.DemiBold
                     font.letterSpacing: 1
-
+                    color: (rightFieldLoader.source
+                            == "qrc:/ui/Notification/MyPage3.qml") ? "#0BBCD1" : "#DDDDDD"
                     anchors {
                         left: menuSettingsIcon.right
                         verticalCenter: parent.verticalCenter
