@@ -28,15 +28,15 @@ ApplicationWindow {
 
         // Left field
         Rectangle {
-            id: textColumn
+            id: leftField
             color: "#272930"
-            opacity: 0.9
+//            opacity: 0.8
             width: 216
 
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.right: pageColumn.left
+            anchors.right: rightField.left
 
             Image {
                 id: micranLogo
@@ -63,94 +63,217 @@ ApplicationWindow {
                 }
             }
 
+            // Menu
             Rectangle {
-                id: rec
-                width: 200
+                id: menu
+                color: "transparent"
                 height: 160
-                anchors.centerIn: parent
+                width: 194
+                anchors {
+//                    left: parent.left
+//                    right: parent.right
+                    horizontalCenter: parent.horizontalCenter
+                    top: micranLogo.bottom
+
+                    leftMargin: 10
+                    rightMargin: 10
+                    topMargin: 44
+                }
 
                 ColumnLayout {
-
+                    spacing: 7
                     // Main
-                    Button {
-                        Layout.preferredHeight: rec.height/4
-                        Layout.preferredWidth: rec.width
-                        TextArea {
-                            id: textArea1
+                    Rectangle {
+                        id: menuMain
+                        height: 36
+                        width: menu.width
+
+                        color: (rightFieldLoader.source == "qrc:/ui/Notification/MyPage.qml") ? "#32343C" : "transparent"
+                        radius: 5
+
+                        Image {
+                            id: menuMainIcon
+                            source: "ui/assets/icon-home-blue.png"
+                            height: 20
+                            width: 20
+
+                            anchors {
+                                left: parent.left
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 12
+                            }
+                        }
+
+                        Text {
+                            id: menuMainText
+                            color: "#0BBCD1"
                             text: "Главная"
-                            anchors.centerIn: parent
-                            readOnly: true
-                            selectByMouse: false
+                            font.pixelSize: 16
+                            font.family: "Arial"
+                            font.weight: Font.DemiBold
+                            font.letterSpacing: 1
+
+                            anchors {
+                                left: menuMainIcon.right
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 14
+                            }
                         }
                         MouseArea {
                             anchors.fill: parent
                             onClicked:
                             {
-                                console.log("clicked 1")
-                                pageLoader.source = "qrc:/ui/Notification/MyPage.qml"
+                                console.log("Main page")
+                                rightFieldLoader.source = "qrc:/ui/Notification/MyPage.qml"
                             }
                         }
                     }
 
                     // Archive
-                    Button {
-                        Layout.preferredHeight: rec.height/4
-                        Layout.preferredWidth: rec.width
-                        TextArea {
-                            id: textArea2
+                    Rectangle {
+                        id: menuArchive
+                        height: 36
+                        width: menu.width
+
+                        color: (rightFieldLoader.source == "qrc:/ui/Notification/MyPage1.qml") ? "#32343C" : "transparent"
+                        radius: 5
+
+                        Image {
+                            id: menuArchiveIcon
+                            source: "ui/assets/icon-home-blue.png"
+                            height: 20
+                            width: 20
+
+                            anchors {
+                                left: parent.left
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 12
+                            }
+                        }
+
+                        Text {
+                            id: menuArchiveText
+                            color: "#0BBCD1"
                             text: "Архив"
-                            anchors.centerIn: parent
-                            readOnly: true
-                            selectByMouse: false
+                            font.pixelSize: 16
+                            font.family: "Arial"
+                            font.weight: Font.DemiBold
+                            font.letterSpacing: 1
+
+                            anchors {
+                                left: menuArchiveIcon.right
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 14
+                            }
                         }
                         MouseArea {
                             anchors.fill: parent
                             onClicked:
                             {
-                                console.log("clicked 2")
-                                pageLoader.source = "qrc:/ui/Notification/MyPage1.qml"
+                                console.log("Archive Page")
+                                rightFieldLoader.source = "qrc:/ui/Notification/MyPage1.qml"
                             }
                         }
                     }
 
                     // Advice
-                    Button {
-                        Layout.preferredHeight: rec.height/4
-                        Layout.preferredWidth: rec.width
-                        TextArea {
-                            id: textArea3
+                    Rectangle {
+                        id: menuAdvice
+                        height: 36
+                        width: menu.width
+
+                        color: (rightFieldLoader.source == "qrc:/ui/Notification/MyPage2.qml") ? "#32343C" : "transparent"
+                        radius: 5
+
+                        Image {
+                            id: menuAdviceIcon
+                            source: "ui/assets/icon-home-blue.png"
+                            height: 20
+                            width: 20
+
+                            anchors {
+                                left: parent.left
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 12
+                            }
+                        }
+
+                        Text {
+                            id: menuAdviceText
+                            color: "#0BBCD1"
                             text: "Советы"
-                            anchors.centerIn: parent
-                            readOnly: true
-                            selectByMouse: false
+                            font.pixelSize: 16
+                            font.family: "Arial"
+                            font.weight: Font.DemiBold
+                            font.letterSpacing: 1
+
+                            anchors {
+                                left: menuAdviceIcon.right
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 14
+                            }
                         }
                         MouseArea {
                             anchors.fill: parent
                             onClicked:
                             {
-                                console.log("clicked 3")
-                                pageLoader.source = "qrc:/ui/Notification/MyPage2.qml"
+                                console.log("Advice Page")
+                                rightFieldLoader.source = "qrc:/ui/Notification/MyPage2.qml"
                             }
                         }
                     }
 
                     // Settings
-                    Button {
-                        Layout.preferredHeight: rec.height/4
-                        Layout.preferredWidth: rec.width
-                        TextArea {
-                            id: textArea4
+                    Rectangle {
+                        id: menuSettings
+                        height: 36
+                        width: menu.width
+
+                        color: (rightFieldLoader.source == "qrc:/ui/Notification/MyPage3.qml") ? "#32343C" : "transparent"
+                        radius: 5
+
+                        Image {
+                            id: menuSettingsIcon
+                            source: "ui/assets/icon-home-blue.png"
+                            height: 20
+                            width: 20
+
+                            anchors {
+                                left: parent.left
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 12
+                            }
+                        }
+
+                        Text {
+                            id: menuSettingsText
+                            color: "#0BBCD1"
                             text: "Настройки"
-                            anchors.centerIn: parent
-                            readOnly: true
-                            selectByMouse: false
+                            font.pixelSize: 16
+                            font.family: "Arial"
+                            font.weight: Font.DemiBold
+                            font.letterSpacing: 1
+
+                            anchors {
+                                left: menuSettingsIcon.right
+                                verticalCenter: parent.verticalCenter
+
+                                leftMargin: 14
+                            }
                         }
                         MouseArea {
                             anchors.fill: parent
                             onClicked:
                             {
-                                console.log("clicked 4")
-                                pageLoader.source = "qrc:/ui/Notification/MyPage3.qml"
+                                console.log("Settings Page")
+                                rightFieldLoader.source = "qrc:/ui/Notification/MyPage3.qml"
                             }
                         }
                     }
@@ -160,16 +283,16 @@ ApplicationWindow {
 
         // Right field
         Rectangle {
-            id: pageColumn
-            anchors.left: textColumn.right
+            id: rightField
+            anchors.left: leftField.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.right:parent.right
             color: "#1E1E1E"
-            width: mainWindow.width - textColumn.width
+            width: mainWindow.width - leftField.width
             Loader {
-                    id: pageLoader
-                    source: ""
+                    id: rightFieldLoader
+                    source: "qrc:/ui/Notification/MyPage.qml"
                     anchors.fill: parent
                 }
         }
