@@ -14,11 +14,14 @@
         <file>ui/Notification/MyPage2.qml</file>
         <file>ui/Notification/MyPage3.qml</file>
         <file>ui/assets/micran-logo.png</file>
-        <file>ui/assets/icon-home-blue.png</file>
         <file>ui/LeftArea/LeftArea.qml</file>
         <file>ui/assets/envelope.svg</file>
         <file>ui/assets/home.svg</file>
         <file>ui/assets/recommendations.svg</file>
         <file>ui/assets/settings.svg</file>
+        <file>ui/LeftArea/MenuMain.qml</file>
+        <file>ui/LeftArea/MenuArchive.qml</file>
+        <file>ui/LeftArea/MenuAdvices.qml</file>
+        <file>ui/LeftArea/MenuSettings.qml</file>
     </qresource>
 </RCC>
