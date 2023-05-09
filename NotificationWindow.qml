@@ -14,9 +14,10 @@ Window {
     maximumHeight: height
     maximumWidth: width
     visible:true
-    x:Screen.width - width
+    x:Screen.width - width - 10
     y:Screen.height - height - pos
     onTypeChanged: {
+        console.log(y)
             switch (type) {
                 case "NOTIFY":
                     color = Qt.rgba(176/255, 68/255, 68/255, 0.9);
