@@ -6,7 +6,6 @@ Rectangle {
     id: menuMain
     height: 36
     width: menu.width
-
     color: (rightFieldLoader.source
             == "qrc:/ui/Notification/MyPage.qml") ? "#32343C" : "transparent"
     radius: 5
@@ -20,11 +19,11 @@ Rectangle {
         anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
-
             leftMargin: 12
         }
     }
-    ColorOverlay{
+
+    ColorOverlay {
            anchors.fill: menuMainIcon
            source: menuMainIcon
            color: (rightFieldLoader.source
@@ -44,10 +43,10 @@ Rectangle {
         anchors {
             left: menuMainIcon.right
             verticalCenter: parent.verticalCenter
-
             leftMargin: 14
         }
     }
+
     MouseArea {
         anchors.fill: parent
         onClicked: {

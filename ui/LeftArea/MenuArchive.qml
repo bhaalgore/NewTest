@@ -19,17 +19,18 @@ Rectangle {
         anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
-
             leftMargin: 12
         }
     }
-    ColorOverlay{
+
+    ColorOverlay {
            anchors.fill: menuArchiveIcon
            source: menuArchiveIcon
            color: (rightFieldLoader.source
                    == "qrc:/ui/Notification/MyPage1.qml") ? "#0BBCD1" : "#DDDDDD"
            antialiasing: true
     }
+
     Text {
         id: menuArchiveText
         text: "Архив"
@@ -42,10 +43,10 @@ Rectangle {
         anchors {
             left: menuArchiveIcon.right
             verticalCenter: parent.verticalCenter
-
             leftMargin: 14
         }
     }
+
     MouseArea {
         anchors.fill: parent
         onClicked: {

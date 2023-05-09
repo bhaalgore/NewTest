@@ -13,7 +13,6 @@ Rectangle {
     anchors.bottom: parent.bottom
     anchors.right: rightField.left
 
-
     Image {
         id: micranLogo
         source: "qrc:/ui/assets/micran-logo.png"

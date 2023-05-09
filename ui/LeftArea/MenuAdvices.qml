@@ -5,7 +5,6 @@ Rectangle {
     id: menuAdvice
     height: 36
     width: menu.width
-
     color: (rightFieldLoader.source
             == "qrc:/ui/Notification/MyPage2.qml") ? "#32343C" : "transparent"
     radius: 5
@@ -19,17 +18,18 @@ Rectangle {
         anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
-
             leftMargin: 12
         }
     }
-    ColorOverlay{
+
+    ColorOverlay {
            anchors.fill: menuAdviceIcon
            source: menuAdviceIcon
            color: (rightFieldLoader.source
                    == "qrc:/ui/Notification/MyPage2.qml") ? "#0BBCD1" : "#DDDDDD"
            antialiasing: true
     }
+
     Text {
         id: menuAdviceText
         text: "Советы"
@@ -42,10 +42,10 @@ Rectangle {
         anchors {
             left: menuAdviceIcon.right
             verticalCenter: parent.verticalCenter
-
             leftMargin: 14
         }
     }
+
     MouseArea {
         anchors.fill: parent
         onClicked: {
