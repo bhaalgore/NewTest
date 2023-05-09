@@ -1,5 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.15
+
 
 Rectangle {
     color: "#272930"
@@ -66,16 +68,23 @@ Rectangle {
 
                 Image {
                     id: menuMainIcon
-                    source: "qrc:/ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/home.svg"
                     height: 20
                     width: 20
-
+                    visible: false
                     anchors {
                         left: parent.left
                         verticalCenter: parent.verticalCenter
 
                         leftMargin: 12
                     }
+                }
+                ColorOverlay{
+                       anchors.fill: menuMainIcon
+                       source: menuMainIcon
+                       color: (rightFieldLoader.source
+                               == "qrc:/ui/Notification/MyPage.qml") ? "#0BBCD1" : "#DDDDDD"
+                       antialiasing: true
                 }
 
                 Text {
@@ -115,10 +124,10 @@ Rectangle {
 
                 Image {
                     id: menuArchiveIcon
-                    source: "qrc:/ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/envelope.svg"
                     height: 20
                     width: 20
-
+                    visible: false
                     anchors {
                         left: parent.left
                         verticalCenter: parent.verticalCenter
@@ -126,7 +135,13 @@ Rectangle {
                         leftMargin: 12
                     }
                 }
-
+                ColorOverlay{
+                       anchors.fill: menuArchiveIcon
+                       source: menuArchiveIcon
+                       color: (rightFieldLoader.source
+                               == "qrc:/ui/Notification/MyPage1.qml") ? "#0BBCD1" : "#DDDDDD"
+                       antialiasing: true
+                }
                 Text {
                     id: menuArchiveText
                     text: "Архив"
@@ -164,10 +179,10 @@ Rectangle {
 
                 Image {
                     id: menuAdviceIcon
-                    source: "qrc:/ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/recommendations.svg"
                     height: 20
                     width: 20
-
+                    visible: false
                     anchors {
                         left: parent.left
                         verticalCenter: parent.verticalCenter
@@ -175,7 +190,13 @@ Rectangle {
                         leftMargin: 12
                     }
                 }
-
+                ColorOverlay{
+                       anchors.fill: menuAdviceIcon
+                       source: menuAdviceIcon
+                       color: (rightFieldLoader.source
+                               == "qrc:/ui/Notification/MyPage2.qml") ? "#0BBCD1" : "#DDDDDD"
+                       antialiasing: true
+                }
                 Text {
                     id: menuAdviceText
                     text: "Советы"
@@ -213,16 +234,24 @@ Rectangle {
 
                 Image {
                     id: menuSettingsIcon
-                    source: "qrc:/ui/assets/icon-home-blue.png"
+                    source: "qrc:/ui/assets/settings.svg"
                     height: 20
                     width: 20
-
+                    visible: false
                     anchors {
                         left: parent.left
                         verticalCenter: parent.verticalCenter
 
                         leftMargin: 12
                     }
+                }
+
+                ColorOverlay{
+                       anchors.fill: menuSettingsIcon
+                       source: menuSettingsIcon
+                       color: (rightFieldLoader.source
+                               == "qrc:/ui/Notification/MyPage3.qml") ? "#0BBCD1" : "#DDDDDD"
+                       antialiasing: true
                 }
 
                 Text {
