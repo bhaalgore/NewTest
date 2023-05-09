@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
                     qreal pos = 0;
                     if(windows.count())
                      pos = windows.back()->property("y").toReal();
-                    else pos = screenHeight;
+                    else pos = screenHeight - 40;
                     pos-=85;
                     window->setProperty("y", QVariant::fromValue(pos));
                     window->setClearBeforeRendering(true);
