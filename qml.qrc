@@ -14,10 +14,6 @@
         <file>ui/assets/home.svg</file>
         <file>ui/assets/recommendations.svg</file>
         <file>ui/assets/settings.svg</file>
-        <file>ui/LeftArea/MenuMain.qml</file>
-        <file>ui/LeftArea/MenuArchive.qml</file>
-        <file>ui/LeftArea/MenuAdvices.qml</file>
-        <file>ui/LeftArea/MenuSettings.qml</file>
         <file>ui/LeftArea/AppName.qml</file>
         <file>ui/RightArea/PagesHandler.qml</file>
         <file>ui/RightArea/MainPage.qml</file>

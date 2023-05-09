@@ -1,16 +1,16 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 
-
 Rectangle {
     id: leftArea
     color: "#272930"
-    opacity: 1
     width: 216
-    anchors.left: parent.left
-    anchors.top: parent.top
-    anchors.bottom: parent.bottom
-    anchors.right: rightField.left
+    anchors {
+        right: rightField.left
+        left: parent.left
+        top: parent.top
+        bottom: parent.bottom
+    }
 
     ColumnLayout {
         spacing: 51
@@ -30,20 +30,32 @@ Rectangle {
             ColumnLayout {
                 spacing: 7
 
-                MenuMain {
-                    id: menuMain
+                MenuSection {
+                    id: mainSection
+                    qrcRightField: "qrc:/ui/Notification/MyPage.qml"
+                    qrcIcon: "qrc:/ui/assets/home.svg"
+                    sectionName: "Главная"
                 }
 
-                MenuArchive{
-                    id: menuArchive
+                MenuSection {
+                    id: archiveSection
+                    qrcRightField: "qrc:/ui/Notification/MyPage1.qml"
+                    qrcIcon: "qrc:/ui/assets/envelope.svg"
+                    sectionName: "Архив"
                 }
 
-                MenuAdvices {
-                    id: menuAdvices
+                MenuSection {
+                    id: adviceSection
+                    qrcRightField: "qrc:/ui/Notification/MyPage2.qml"
+                    qrcIcon: "qrc:/ui/assets/recommendations.svg"
+                    sectionName: "Советы"
                 }
 
-                MenuSettings {
-                    id: menuSettings
+                MenuSection {
+                    id: settingSection
+                    qrcRightField: "qrc:/ui/Notification/MyPage3.qml"
+                    qrcIcon: "qrc:/ui/assets/settings.svg"
+                    sectionName: "Настройки"
                 }
             }
         }
