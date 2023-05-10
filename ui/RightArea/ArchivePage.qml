@@ -6,16 +6,22 @@ Rectangle {
     color: "transparent"
 
     Text {
-        id: contentText
+        id: header
         text: "Архив"
-        font.pixelSize: 24
-        font.family: "Arial"
-        font.weight: Font.DemiBold
-        font.letterSpacing: 1
-        anchors.top: root.top
-        anchors.left: root.left
-        anchors.topMargin: 25
-        anchors.leftMargin: 40
+
+        font {
+            pixelSize: 24
+            family: "Arial"
+            weight: Font.DemiBold
+            letterSpacing: 1
+        }
+
+        anchors {
+            top: parent.top
+            left: parent.left
+            topMargin: 24
+            leftMargin: 40
+        }
         color: "#DDDDDD"
     }
 
@@ -26,8 +32,8 @@ Rectangle {
         height: parent.height
         width: parent.width
         anchors{
-            top:contentText.top
-            left:contentText.left
+            top: header.top
+            left: header.left
             topMargin: 35
             leftMargin: 30
 

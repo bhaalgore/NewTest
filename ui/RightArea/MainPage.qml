@@ -8,15 +8,21 @@ Rectangle {
     Text {
         id: header
         text: "Do not miss\nany signal"
-        font.pixelSize: 36
-        font.family: "Arial"
-        font.weight: Font.DemiBold
-        font.letterSpacing: 1
-        anchors.top: mainPage.top
-        anchors.left: mainPage.left
-        anchors.topMargin: 66
-        anchors.leftMargin: 30
-        color: "#FFFFFF"
+
+        font {
+            pixelSize: 36
+            family: "Arial"
+            weight: Font.DemiBold
+            letterSpacing: 1
+        }
+        anchors {
+            top: parent.top
+            left: parent.left
+            topMargin: 66
+            leftMargin: 30
+        }
+
+        color: "#DDDDDD"
     }
 
     Item {
@@ -83,8 +89,8 @@ Rectangle {
     }
 
     Item {
-        width: 318.43
-        height: 298.97
+        width: 318
+        height: 298
         anchors {
             top: parent.top
             right: parent.right
