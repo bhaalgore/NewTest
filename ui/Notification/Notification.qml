@@ -54,20 +54,6 @@ Rectangle {
         id: columnLayout
         width:parent.width
 
-//            Image {
-//                Layout.alignment: Qt.AlignRight
-//                Layout.topMargin: 14
-//                Layout.rightMargin: 22
-//                MouseArea {
-//                    anchors.fill: parent
-//                    onClicked: rec.visible = false
-
-//                }
-//                id: closeNotificationIcon
-//                fillMode: Image.PreserveAspectFit
-//                source: "qrc:/ui/assets/closenoticon.png"
-//            }
-
             Text {
                 text: title
                 Layout.leftMargin: 7
