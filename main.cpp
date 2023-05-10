@@ -5,11 +5,13 @@
 #include <QQmlContext>
 #include <QDebug>
 #include <QtQuick>
+#include <QQuickWindow>
 int main(int argc, char *argv[])
 {
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+    app.setQuitOnLastWindowClosed(false);
     LogicPlugin::NotificationModel notificationModel;
 
     QQmlApplicationEngine engine;
@@ -42,14 +44,16 @@ int main(int argc, char *argv[])
                     window->setClearBeforeRendering(true);
                     window->show();
                     windows.append(window);
-                    QObject::connect(window, &QQuickWindow::visibleChanged, [&windows,window]() {
+                    QObject::connect(window, &QQuickWindow::visibleChanged, [&, window]() {
                         qreal closedWindowPos = window->property("y").toReal();
+                        int index = windows.indexOf(window);
                         for (auto& w : windows) {
                             qreal wPos = w->property("y").toReal();
                             if (w != window && wPos < closedWindowPos) {
                                 w->setProperty("y", QVariant::fromValue(wPos + 85));
                             }
                         }
+                        notificationModel.removeNotification(index);
                         windows.removeOne(window);
                     });
                 }

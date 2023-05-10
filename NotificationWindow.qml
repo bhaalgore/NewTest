@@ -49,7 +49,6 @@ Window {
         MouseArea {
             anchors.fill: parent
             onClicked: notification_window.close()
-
         }
         fillMode: Image.PreserveAspectFit
         source: "qrc:/ui/assets/closenoticon.png"
