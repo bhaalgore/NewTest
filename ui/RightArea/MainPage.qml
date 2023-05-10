@@ -7,10 +7,10 @@ Rectangle {
 
     Text {
         id: header
-        text: "Не пропусти ни одного события\nс помощью нашего приложения!"
+        text: "Следи, управляй, действуй."
 
         font {
-            pixelSize: 28
+            pixelSize: 26
             family: "Arial"
             weight: Font.DemiBold
             letterSpacing: 1
@@ -20,6 +20,25 @@ Rectangle {
             left: parent.left
             topMargin: 66
             leftMargin: 30
+        }
+
+        color: "#DDDDDD"
+    }
+
+    Text {
+        id: subHeader
+        text: "Все уведомления в одном месте."
+
+        font {
+            pixelSize: 18
+            family: "Arial"
+            weight: Font.DemiBold
+            letterSpacing: 1
+        }
+        anchors {
+            top: header.top
+            left: header.left
+            topMargin: 34
         }
 
         color: "#DDDDDD"
