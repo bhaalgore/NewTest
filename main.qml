@@ -4,15 +4,15 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.15
 import QtQml.Models 2.15
+
 import "ui/ControlPanel"
-import "ui/BottomScreen"
 import "ui/Notification"
 import "ui/LeftArea"
 import "ui/RightArea"
 
 ApplicationWindow {
     id: mainWindow
-    //flags: Qt.FramelessWindowHint | Qt.Window
+    flags: Qt.FramelessWindowHint | Qt.Window
     width: 900
     height: 600
 
@@ -29,12 +29,16 @@ ApplicationWindow {
         height: mainWindow.height
         color: "transparent"
 
+
         LeftArea{
             id: leftField
         }
 
         PagesHandler {
             id: rightField
+            ToolBar{
+
+            }
 
             Loader {
                 id: rightFieldLoader

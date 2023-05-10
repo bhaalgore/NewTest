@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>ui/assets/closenoticon.png</file>
         <file>ui/assets/menuicon.png</file>
         <file>ui/BottomScreen/BottomScreen.qml</file>
         <file>ui/ControlPanel/ControlPanel.qml</file>
@@ -9,10 +8,6 @@
         <file>main.qml</file>
         <file>ui/assets/map.png</file>
         <file>ui/assets/favicon.png</file>
-        <file>ui/Notification/MyPage.qml</file>
-        <file>ui/Notification/MyPage1.qml</file>
-        <file>ui/Notification/MyPage2.qml</file>
-        <file>ui/Notification/MyPage3.qml</file>
         <file>ui/assets/micran-logo.png</file>
         <file>ui/LeftArea/LeftArea.qml</file>
         <file>ui/assets/envelope.svg</file>
@@ -29,5 +24,8 @@
         <file>ui/RightArea/ArchivePage.qml</file>
         <file>ui/RightArea/AdvicesPage.qml</file>
         <file>ui/RightArea/SettingsPage.qml</file>
+        <file>ui/ControlPanel/ToolBar.qml</file>
+        <file>ui/assets/Vector.svg</file>
+        <file>ui/assets/minimizeIcon.svg</file>
     </qresource>
 </RCC>
