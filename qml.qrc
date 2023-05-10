@@ -25,5 +25,9 @@
         <file>ui/assets/shape2.png</file>
         <file>ui/assets/shape3.png</file>
         <file>ui/RightArea/PageRect.qml</file>
+        <file>ui/assets/map.png</file>
+        <file>ui/assets/favicon.png</file>
+        <file>ui/Notification/listView.qml</file>
+        <file>NotificationWindow.qml</file>
     </qresource>
 </RCC>
