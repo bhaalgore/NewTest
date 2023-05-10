@@ -41,7 +41,7 @@ Rectangle {
         }
     }
 
-    MainPageRect {
+    PageRect {
         primaryText: "Micran"
         secondaryText: "Сайт компании"
 
@@ -75,7 +75,7 @@ Rectangle {
         }
     }
 
-    MainPageRect {
+    PageRect {
         primaryText: "Версия 0.1.0"
         secondaryText: "Первая альфа"
 
@@ -104,7 +104,7 @@ Rectangle {
         }
     }
 
-    MainPageRect {
+    PageRect {
         primaryText: "Notification Manager"
         secondaryText: "О приложении"
 

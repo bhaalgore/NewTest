@@ -22,8 +22,8 @@
         <file>ui/assets/close.svg</file>
         <file>ui/LeftArea/MenuSection.qml</file>
         <file>ui/assets/shape1.png</file>
-        <file>ui/RightArea/MainPageRect.qml</file>
         <file>ui/assets/shape2.png</file>
         <file>ui/assets/shape3.png</file>
+        <file>ui/RightArea/PageRect.qml</file>
     </qresource>
 </RCC>
