@@ -32,28 +32,28 @@ Rectangle {
 
                 MenuSection {
                     id: mainSection
-                    qrcRightField: "qrc:/ui/Notification/MyPage.qml"
+                    qrcRightField: "qrc:/ui/RightArea/MainPage.qml"
                     qrcIcon: "qrc:/ui/assets/home.svg"
                     sectionName: "Главная"
                 }
 
                 MenuSection {
                     id: archiveSection
-                    qrcRightField: "qrc:/ui/Notification/MyPage1.qml"
+                    qrcRightField: "qrc:/ui/RightArea/ArchivePage.qml"
                     qrcIcon: "qrc:/ui/assets/envelope.svg"
                     sectionName: "Архив"
                 }
 
                 MenuSection {
                     id: adviceSection
-                    qrcRightField: "qrc:/ui/Notification/MyPage2.qml"
+                    qrcRightField: "qrc:/ui/RightArea/AdvicesPage.qml"
                     qrcIcon: "qrc:/ui/assets/recommendations.svg"
                     sectionName: "Советы"
                 }
 
                 MenuSection {
                     id: settingSection
-                    qrcRightField: "qrc:/ui/Notification/MyPage3.qml"
+                    qrcRightField: "qrc:/ui/RightArea/SettingsPage.qml"
                     qrcIcon: "qrc:/ui/assets/settings.svg"
                     sectionName: "Настройки"
                 }

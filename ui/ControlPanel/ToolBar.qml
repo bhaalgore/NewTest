@@ -5,7 +5,7 @@ Rectangle {
     id:wrapper
     anchors.top: parent.top
     width: mainWindow.width - leftField.width
-    height: 40
+    height: 50
     color: "transparent"
     Item {
         id: dragHandler
@@ -17,8 +17,12 @@ Rectangle {
         }
         }
     RowLayout {
-        anchors.top:parent.top
-        anchors.right: parent.right
+        anchors {
+            top: parent.top
+            right: parent.right
+            topMargin: 15
+            rightMargin: 15
+        }
 
         Rectangle {
             id: recMinimizeWrapper
@@ -57,7 +61,7 @@ Rectangle {
                 id: closeImage
                 source: "qrc:/ui/assets/close.svg"
                 Layout.preferredWidth:  16
-                Layout.preferredHeight:  15
+                Layout.preferredHeight:  17
                 anchors.centerIn: recQuitWrapper
                 MouseArea {
                     hoverEnabled: true
