@@ -46,7 +46,7 @@ void LogicPlugin::NotificationModel::addNotification(
 {
     beginInsertRows(QModelIndex(), _notifications.count(), _notifications.count());
     _notifications.push_back(notification);
-    logger.insert(notification->title(), notification->description(),notification->type(),
+    logger.insert(notification->type(), notification->title(),notification->description(),
                   QDate::currentDate());
     endInsertRows();
 }
@@ -62,12 +62,12 @@ void LogicPlugin::NotificationModel::removeNotification(int index)
 
 void LogicPlugin::NotificationModel::timerEvent(QTimerEvent *event)
 {
-    if(_timerId!=event->timerId())
-        return;
-    if(count()>10)
-        return;
-    auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);
-    addNotification(myImpl);
+//    if(_timerId!=event->timerId())
+//        return;
+//    if(count()>10)
+//        return;
+//    auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);
+//    addNotification(myImpl);
 }
 void LogicPlugin::NotificationModel::clearNotifications()
 {

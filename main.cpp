@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include "include/notify_model.h"
 #include "include/notification_entity.h"
+#include "include/history_model.h"
 #include <QQmlContext>
 #include <QDebug>
 #include <QtQuick>
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     app.setQuitOnLastWindowClosed(false);
     LogicPlugin::NotificationModel notificationModel;
-
+    HistoryModel historyModel;
     QQmlApplicationEngine engine;
     QQmlEngine Qengine;
     QList<QQuickWindow*> windows;
@@ -64,7 +65,9 @@ int main(int argc, char *argv[])
         }
     });
 
-    engine.rootContext()->setContextProperty("NotificationModel", &notificationModel);
+    engine.rootContext()->setContextProperty("HistoryModel", &historyModel);
+
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     LogicPlugin::TypeManager::addType("test");
     auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);
     notificationModel.addNotification(myImpl);

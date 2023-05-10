@@ -11,8 +11,8 @@ Window {
 
     flags: Qt.FramelessWindowHint
 
-    height: 80
-    width: 400
+    height: 75
+    width: 300
     maximumHeight: height
     maximumWidth: width
 
@@ -38,10 +38,10 @@ Window {
                     break;
             }
         }
-//    Timer {
-//           interval: 15000; running: true; repeat: false
-//           onTriggered: visible = false
-//       }
+   Timer {
+           interval: 15000; running: true; repeat: false
+           onTriggered: notification_window.close
+       }
 
     Image {
         id: closeNotificationIcon

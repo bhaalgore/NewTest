@@ -8,6 +8,7 @@ Rectangle {
     property string title: ""
     property string message: ""
     property string state: ""
+    property string date: ""
 
     height: mainWindow.height / 16
     width: mainWindow.width / 6
@@ -53,19 +54,6 @@ Rectangle {
         id: columnLayout
         width:parent.width
 
-//            Image {
-//                Layout.alignment: Qt.AlignRight
-//                Layout.topMargin: 14
-//                Layout.rightMargin: 22
-//                MouseArea {
-//                    anchors.fill: parent
-//                    onClicked: rec.visible = false
-
-//                }
-//                id: closeNotificationIcon
-//                fillMode: Image.PreserveAspectFit
-//                source: "qrc:/ui/assets/closenoticon.png"
-//            }
 
             Text {
                 text: title
@@ -82,6 +70,13 @@ Rectangle {
             text: message
             Layout.leftMargin: 7
             color: "#DDDDDD"
+            font.pointSize: ((rec.height/5) + (rec.width /10))/6
+            font.family: "OpenSans"
+        }
+        Text {
+            text: date
+            Layout.leftMargin: 7
+            color: "red"
             font.pointSize: ((rec.height/5) + (rec.width /10))/6
             font.family: "OpenSans"
         }
