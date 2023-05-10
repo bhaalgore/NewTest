@@ -7,10 +7,10 @@ Rectangle {
 
     Text {
         id: header
-        text: "Не пропусти\nни одного события!"
+        text: "Не пропусти ни одного события\nс помощью нашего приложения!"
 
         font {
-            pixelSize: 36
+            pixelSize: 28
             family: "Arial"
             weight: Font.DemiBold
             letterSpacing: 1
