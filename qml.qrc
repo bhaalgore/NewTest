@@ -25,7 +25,7 @@
         <file>ui/RightArea/AdvicesPage.qml</file>
         <file>ui/RightArea/SettingsPage.qml</file>
         <file>ui/ControlPanel/ToolBar.qml</file>
-        <file>ui/assets/Vector.svg</file>
         <file>ui/assets/minimizeIcon.svg</file>
+        <file>ui/assets/close.svg</file>
     </qresource>
 </RCC>

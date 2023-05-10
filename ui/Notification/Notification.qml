@@ -9,10 +9,9 @@ Rectangle {
     property string message: ""
     property string state: ""
 
-    height: mainWindow.height / 16
-    width: mainWindow.width / 6
+    height: 60
+    width: root.width - 85
     visible:true
-
 
     Component.onCompleted: {
             switch (state) {
@@ -31,6 +30,10 @@ Rectangle {
         }
 
     Image {
+        id: closeNotificationIcon
+        source: "qrc:/ui/assets/close.svg"
+        width:13
+        height:14
         anchors{
             top:parent.top
             right:parent.right
@@ -44,9 +47,7 @@ Rectangle {
 
         }
 
-        id: closeNotificationIcon
-        fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/closenoticon.png"
+
     }
 
     ColumnLayout {

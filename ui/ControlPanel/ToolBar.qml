@@ -55,7 +55,7 @@ Rectangle {
             color:"transparent"
             Image {
                 id: closeImage
-                source: "qrc:/ui/assets/Vector.svg"
+                source: "qrc:/ui/assets/close.svg"
                 Layout.preferredWidth:  16
                 Layout.preferredHeight:  15
                 anchors.centerIn: recQuitWrapper

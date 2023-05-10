@@ -38,6 +38,7 @@ Rectangle {
         font.family: "Arial"
         font.weight: Font.DemiBold
         font.letterSpacing: 1
+
         color: (rightFieldLoader.source
                 == "qrc:/ui/RightArea/ArchivePage.qml") ? "#0BBCD1" : "#DDDDDD"
         anchors {

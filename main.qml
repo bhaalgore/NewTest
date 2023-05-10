@@ -10,6 +10,7 @@ import "ui/Notification"
 import "ui/LeftArea"
 import "ui/RightArea"
 
+
 ApplicationWindow {
     id: mainWindow
     flags: Qt.FramelessWindowHint | Qt.Window
