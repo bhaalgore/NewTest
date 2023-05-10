@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
     QQmlEngine Qengine;
     QList<QQuickWindow*> windows;
 
-
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect geometry = screen->geometry();
     int screenHeight = screen->size().height()+geometry.y();
@@ -75,24 +74,6 @@ int main(int argc, char *argv[])
     notificationModel.addNotification(myImpl1);
     auto myImpl2 = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 3);
     notificationModel.addNotification(myImpl2);
-    app.exec();
-//    notificationModel.addNotification(myImpl1);
-//    notificationModel.addNotification(myImpl1);
-//    notificationModel.addNotification(myImpl1);
-//    notificationModel.addNotification(myImpl1);
-//   notificationModel.addNotification(myImpl1);
-//    notificationModel.addNotification(myImpl1);
-//   notificationModel.addNotification(myImpl1);
-//    notificationModel.addNotification(myImpl1);
-//   notificationModel.addNotification(myImpl1);
-//    notificationModel.addNotification(myImpl1);
-//   notificationModel.addNotification(myImpl1);
-    //    notificationModel.addNotification("Обнаружена цель в SportCenter", "Очень важная
-    //    информация. Очень важная информация.", 0); notificationModel.addNotification("Камера не
-    //    доступна!", "Очень важная информация. Очень важная информация.", 1);
-    //    notificationModel.addNotification("Высокий уровень шума", "Очень важная информация. Очень
-    //    важная информация.", 2);
-
 
     return app.exec();
 }

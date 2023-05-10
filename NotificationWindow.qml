@@ -9,7 +9,7 @@ Window {
     property string message: ""
     property string type: ""
 
-    flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool
 
     height: 75
     width: 300

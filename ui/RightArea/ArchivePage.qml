@@ -28,7 +28,7 @@ Rectangle {
     ListView {
         id: notifyList
         spacing: 20
-        model: Notificationmodel
+        model: HistoryModel
         height: parent.height
         width: parent.width
         anchors{
@@ -41,7 +41,7 @@ Rectangle {
         delegate: Notification {
             title: model.title
             message: model.message
-            state: model.type
+            date: model.date
         }
     }
 }
