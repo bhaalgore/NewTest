@@ -7,7 +7,7 @@ Rectangle {
 
     Text {
         id: header
-        text: "Do not miss\nany signal"
+        text: "Не пропусти\nни одного события!"
 
         font {
             pixelSize: 36
