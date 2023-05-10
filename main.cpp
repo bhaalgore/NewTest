@@ -74,6 +74,7 @@ int main(int argc, char *argv[])
     notificationModel.addNotification(myImpl1);
     auto myImpl2 = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 3);
     notificationModel.addNotification(myImpl2);
-
+    auto myImpl3 = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 0);
+    notificationModel.addNotification(myImpl3);
     return app.exec();
 }

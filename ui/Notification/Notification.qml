@@ -7,7 +7,7 @@ Rectangle {
     id: rec
     property string title: ""
     property string message: ""
-    property string state: ""
+    property string type: ""
     property string date: ""
 
     height: 60
@@ -15,7 +15,7 @@ Rectangle {
     visible:true
 
     Component.onCompleted: {
-            switch (state) {
+            switch (type) {
                 case "NOTIFY":
                     color = Qt.rgba(176/255, 68/255, 68/255, 0.9);
                     break;

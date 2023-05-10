@@ -9,6 +9,7 @@ public:
     enum Roles {
         TitleRole = Qt::UserRole + 1,
         MessageRole,
+        TypeRole,
         DateRole
     };
 
@@ -24,6 +25,7 @@ public:
         QHash<int, QByteArray> roles;
         roles[TitleRole] = "title";
         roles[MessageRole] = "message";
+        roles[TypeRole] = "type";
         roles[DateRole] = "date";
         return roles;
     }
@@ -39,8 +41,10 @@ public:
             return record.value("Title");
         case MessageRole:
             return record.value("Description");
+        case TypeRole:
+            return record.value("Type");
         case DateRole:
-            return record.value("Date");
+            return record.value("Date");       
         default:
             return QVariant();
         }

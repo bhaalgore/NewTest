@@ -41,6 +41,7 @@ Rectangle {
         delegate: Notification {
             title: model.title
             message: model.message
+            type: model.type
             date: model.date
         }
     }
