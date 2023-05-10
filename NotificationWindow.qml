@@ -11,8 +11,8 @@ Window {
 
     flags: Qt.FramelessWindowHint
 
-    height: 80
-    width: 400
+    height: 75
+    width: 300
     maximumHeight: height
     maximumWidth: width
 
@@ -37,6 +37,10 @@ Window {
                     break;
             }
         }
+   Timer {
+           interval: 15000; running: true; repeat: false
+           onTriggered: notification_window.close
+       }
 
     Image {
         id: closeNotificationIcon
@@ -60,6 +64,7 @@ Window {
 
     ColumnLayout {
         id: columnLayout
+        spacing: 6
         anchors {
             top: parent.top
             left: parent.left
@@ -77,20 +82,15 @@ Window {
                 family: "Arial"
             }
         }
-        Item {
-            width: 380
-            Text {
-                text: message
-                color: "#DDDDDD"
-                width: parent.width
-                font {
-                    pixelSize: 14
-                    family: "Arial"
-                }
-
-                wrapMode: Text.Wrap
+        Text {
+            text: message
+            color: "#DDDDDD"
+            font {
+                pixelSize: 16
+                family: "Arial"
             }
 
+            wrapMode: Text.WordWrap
         }
     }
 }

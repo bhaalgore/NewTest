@@ -2,17 +2,18 @@
 #include <QQmlApplicationEngine>
 #include "include/notify_model.h"
 #include "include/notification_entity.h"
-
+#include "include/history_model.h"
 #include <QQmlContext>
 #include <QDebug>
 #include <QtQuick>
+#include <QQuickWindow>
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
-
+    app.setQuitOnLastWindowClosed(false);
     LogicPlugin::NotificationModel notificationModel;
-
+    HistoryModel historyModel;
     QQmlApplicationEngine engine;
     QQmlEngine Qengine;
     QList<QQuickWindow*> windows;
@@ -44,14 +45,16 @@ int main(int argc, char *argv[])
                     window->setClearBeforeRendering(true);
                     window->show();
                     windows.append(window);
-                    QObject::connect(window, &QQuickWindow::visibleChanged, [&windows,window]() {
+                    QObject::connect(window, &QQuickWindow::visibleChanged, [&, window]() {
                         qreal closedWindowPos = window->property("y").toReal();
+                        int index = windows.indexOf(window);
                         for (auto& w : windows) {
                             qreal wPos = w->property("y").toReal();
                             if (w != window && wPos < closedWindowPos) {
                                 w->setProperty("y", QVariant::fromValue(wPos + 85));
                             }
                         }
+                        notificationModel.removeNotification(index);
                         windows.removeOne(window);
                     });
                 }
@@ -61,7 +64,9 @@ int main(int argc, char *argv[])
             }
         }
     });
-    engine.rootContext()->setContextProperty("Notificationmodel", &notificationModel);
+
+    engine.rootContext()->setContextProperty("HistoryModel", &historyModel);
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     LogicPlugin::TypeManager::addType("test");
     auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);

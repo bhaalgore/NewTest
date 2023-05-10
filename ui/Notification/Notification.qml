@@ -8,6 +8,7 @@ Rectangle {
     property string title: ""
     property string message: ""
     property string state: ""
+    property string date: ""
 
     height: 60
     width: root.width - 85
@@ -54,6 +55,7 @@ Rectangle {
         id: columnLayout
         width:parent.width
 
+
             Text {
                 text: title
                 Layout.leftMargin: 7
@@ -69,6 +71,13 @@ Rectangle {
             text: message
             Layout.leftMargin: 7
             color: "#DDDDDD"
+            font.pointSize: ((rec.height/5) + (rec.width /10))/6
+            font.family: "OpenSans"
+        }
+        Text {
+            text: date
+            Layout.leftMargin: 7
+            color: "red"
             font.pointSize: ((rec.height/5) + (rec.width /10))/6
             font.family: "OpenSans"
         }

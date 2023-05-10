@@ -6,12 +6,14 @@ QT_DEBUG_PLUGINS=1
 CONFIG += c++17
 HEADERS += \
     include/abstract_notification.h \
+    include/history_model.h \
     include/notification_entity.h \
     include/notification_logger.h \
     include/notify_model.h \
     include/type_manager.h
 SOURCES += \
         include/abstract_notification.cpp \
+        include/history_model.cpp \
         include/notification_entity.cpp \
         include/notification_logger.cpp \
         include/notify_model.cpp \
