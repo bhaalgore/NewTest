@@ -29,7 +29,6 @@ ApplicationWindow {
         height: mainWindow.height
         color: "transparent"
 
-
         LeftArea{
             id: leftField
         }
