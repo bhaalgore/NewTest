@@ -4,17 +4,23 @@ import QtQuick.Layouts 1.15
 
 Window {
     id: notification_window
+
     property string title: ""
     property string message: ""
     property string type: ""
+
     flags: Qt.FramelessWindowHint
-    height:75
-    width: 300
+
+    height: 80
+    width: 400
     maximumHeight: height
     maximumWidth: width
-    visible:true
+
     x:Screen.width - width - 10
     y:Screen.height - height
+
+    visible:true
+    opacity: 0.8
     onTypeChanged: {
         //console.log(y)
             switch (type) {
@@ -39,41 +45,51 @@ Window {
 
     Image {
         id: closeNotificationIcon
+        source: "qrc:/ui/assets/closenoticon.png"
+        fillMode: Image.PreserveAspectFit
+
         anchors {
             top:parent.top
             right:parent.right
             topMargin: 14
-            rightMargin: 22
+            rightMargin: 14
         }
 
         MouseArea {
             anchors.fill: parent
             onClicked: notification_window.close()
-
         }
-        fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/closenoticon.png"
     }
 
     ColumnLayout {
         id: columnLayout
-        width:parent.width
+        spacing: 6
+        anchors {
+            top: parent.top
+            left: parent.left
+
+            topMargin: 8
+            leftMargin: 14
+        }
 
         Text {
             text: title
-            Layout.leftMargin: 7
-            Layout.topMargin: 10
             color: "#DDDDDD"
-            font.pointSize: ((notification_window.height/5) + (notification_window.width /10))/4
-            font.weight: "DemiBold"
-            font.family: "OpenSans"
+            font {
+                pixelSize: 18
+                weight: Font.DemiBold
+                family: "Arial"
+            }
         }
         Text {
             text: message
-            Layout.leftMargin: 7
             color: "#DDDDDD"
-            font.pointSize: ((notification_window.height/5) + (notification_window.width /10))/6
-            font.family: "OpenSans"
+            font {
+                pixelSize: 16
+                family: "Arial"
+            }
+
+            wrapMode: Text.WordWrap
         }
     }
 }
