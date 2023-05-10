@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     QQmlEngine Qengine;
     QList<QQuickWindow*> windows;
 
+
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect geometry = screen->geometry();
     int screenHeight = screen->size().height()+geometry.y();
@@ -60,8 +61,8 @@ int main(int argc, char *argv[])
             }
         }
     });
-
-    engine.rootContext()->setContextProperty("NotificationModel", &notificationModel);
+    engine.rootContext()->setContextProperty("Notificationmodel", &notificationModel);
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     LogicPlugin::TypeManager::addType("test");
     auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);
     notificationModel.addNotification(myImpl);
@@ -87,9 +88,6 @@ int main(int argc, char *argv[])
     //    notificationModel.addNotification("Высокий уровень шума", "Очень важная информация. Очень
     //    важная информация.", 2);
 
-    QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("Notificationmodel", &notificationModel);
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();
 }

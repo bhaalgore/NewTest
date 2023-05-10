@@ -52,7 +52,7 @@ Window {
 
         }
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/closenoticon.png"
+        source: "qrc:/ui/assets/close.svg"
     }
 
     ColumnLayout {
