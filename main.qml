@@ -8,6 +8,8 @@ import "ui/ControlPanel"
 import "ui/BottomScreen"
 import "ui/Notification"
 import "ui/LeftArea"
+import "ui/RightArea"
+
 ApplicationWindow {
     id: mainWindow
     //flags: Qt.FramelessWindowHint | Qt.Window
@@ -31,20 +33,14 @@ ApplicationWindow {
             id: leftField
         }
 
-        // Right field
-        Rectangle {
+        PagesHandler {
             id: rightField
-            anchors.left: leftField.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.right:parent.right
-            color: "#1E1E1E"
-            width: mainWindow.width - leftField.width
+
             Loader {
-                    id: rightFieldLoader
-                    source: "qrc:/ui/Notification/MyPage.qml"
-                    anchors.fill: parent
-                }
+                id: rightFieldLoader
+                source: "qrc:/ui/RightArea/MainPage.qml"
+                anchors.fill: parent
+            }
         }
     }
 }

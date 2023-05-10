@@ -6,7 +6,7 @@ Rectangle {
     height: 36
     width: menu.width
     color: (rightFieldLoader.source
-            == "qrc:/ui/Notification/MyPage3.qml") ? "#32343C" : "transparent"
+            == "qrc:/ui/RightArea/SettingsPage.qml") ? "#32343C" : "transparent"
     radius: 5
 
     Image {
@@ -26,7 +26,7 @@ Rectangle {
            anchors.fill: menuSettingsIcon
            source: menuSettingsIcon
            color: (rightFieldLoader.source
-                   == "qrc:/ui/Notification/MyPage3.qml") ? "#0BBCD1" : "#DDDDDD"
+                   == "qrc:/ui/RightArea/SettingsPage.qml") ? "#0BBCD1" : "#DDDDDD"
            antialiasing: true
     }
 
@@ -38,7 +38,7 @@ Rectangle {
         font.weight: Font.DemiBold
         font.letterSpacing: 1
         color: (rightFieldLoader.source
-                == "qrc:/ui/Notification/MyPage3.qml") ? "#0BBCD1" : "#DDDDDD"
+                == "qrc:/ui/RightArea/SettingsPage.qml") ? "#0BBCD1" : "#DDDDDD"
         anchors {
             left: menuSettingsIcon.right
             verticalCenter: parent.verticalCenter
@@ -50,7 +50,7 @@ Rectangle {
         anchors.fill: parent
         onClicked: {
             console.log("Settings Page")
-            rightFieldLoader.source = "qrc:/ui/Notification/MyPage3.qml"
+            rightFieldLoader.source = "qrc:/ui/RightArea/SettingsPage.qml"
         }
     }
 }

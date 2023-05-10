@@ -7,7 +7,7 @@ Rectangle {
     width: menu.width
 
     color: (rightFieldLoader.source
-            == "qrc:/ui/Notification/MyPage1.qml") ? "#32343C" : "transparent"
+            == "qrc:/ui/RightArea/ArchivePage.qml") ? "#32343C" : "transparent"
     radius: 5
 
     Image {
@@ -27,7 +27,7 @@ Rectangle {
            anchors.fill: menuArchiveIcon
            source: menuArchiveIcon
            color: (rightFieldLoader.source
-                   == "qrc:/ui/Notification/MyPage1.qml") ? "#0BBCD1" : "#DDDDDD"
+                   == "qrc:/ui/RightArea/ArchivePage.qml") ? "#0BBCD1" : "#DDDDDD"
            antialiasing: true
     }
 
@@ -39,7 +39,7 @@ Rectangle {
         font.weight: Font.DemiBold
         font.letterSpacing: 1
         color: (rightFieldLoader.source
-                == "qrc:/ui/Notification/MyPage1.qml") ? "#0BBCD1" : "#DDDDDD"
+                == "qrc:/ui/RightArea/ArchivePage.qml") ? "#0BBCD1" : "#DDDDDD"
         anchors {
             left: menuArchiveIcon.right
             verticalCenter: parent.verticalCenter
@@ -51,7 +51,7 @@ Rectangle {
         anchors.fill: parent
         onClicked: {
             console.log("Archive Page")
-            rightFieldLoader.source = "qrc:/ui/Notification/MyPage1.qml"
+            rightFieldLoader.source = "qrc:/ui/RightArea/ArchivePage.qml"
         }
     }
 }

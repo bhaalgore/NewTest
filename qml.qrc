@@ -24,5 +24,10 @@
         <file>ui/LeftArea/MenuAdvices.qml</file>
         <file>ui/LeftArea/MenuSettings.qml</file>
         <file>ui/LeftArea/AppName.qml</file>
+        <file>ui/RightArea/PagesHandler.qml</file>
+        <file>ui/RightArea/MainPage.qml</file>
+        <file>ui/RightArea/ArchivePage.qml</file>
+        <file>ui/RightArea/AdvicesPage.qml</file>
+        <file>ui/RightArea/SettingsPage.qml</file>
     </qresource>
 </RCC>

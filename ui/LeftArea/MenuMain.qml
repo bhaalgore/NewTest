@@ -7,7 +7,7 @@ Rectangle {
     height: 36
     width: menu.width
     color: (rightFieldLoader.source
-            == "qrc:/ui/Notification/MyPage.qml") ? "#32343C" : "transparent"
+            == "qrc:/ui/RightArea/MainPage.qml") ? "#32343C" : "transparent"
     radius: 5
 
     Image {
@@ -27,7 +27,7 @@ Rectangle {
            anchors.fill: menuMainIcon
            source: menuMainIcon
            color: (rightFieldLoader.source
-                   == "qrc:/ui/Notification/MyPage.qml") ? "#0BBCD1" : "#DDDDDD"
+                   == "qrc:/ui/RightArea/MainPage.qml") ? "#0BBCD1" : "#DDDDDD"
            antialiasing: true
     }
 
@@ -39,7 +39,7 @@ Rectangle {
         font.weight: Font.DemiBold
         font.letterSpacing: 1
         color: (rightFieldLoader.source
-                == "qrc:/ui/Notification/MyPage.qml") ? "#0BBCD1" : "#DDDDDD"
+                == "qrc:/ui/RightArea/MainPage.qml") ? "#0BBCD1" : "#DDDDDD"
         anchors {
             left: menuMainIcon.right
             verticalCenter: parent.verticalCenter
@@ -51,7 +51,7 @@ Rectangle {
         anchors.fill: parent
         onClicked: {
             console.log("Main page")
-            rightFieldLoader.source = "qrc:/ui/Notification/MyPage.qml"
+            rightFieldLoader.source = "qrc:/ui/RightArea/MainPage.qml"
         }
     }
 }
