@@ -24,7 +24,6 @@ Rectangle {
 
         color: "#DDDDDD"
     }
-
     Item {
         width: 274
         height: 270
