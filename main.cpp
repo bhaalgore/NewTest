@@ -15,9 +15,11 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     QQmlEngine Qengine;
     QList<QQuickWindow*> windows;
+
     QScreen *screen = QGuiApplication::primaryScreen();
-    QSize screenSize = screen->size();
-    int screenHeight = screenSize.height();
+    QRect geometry = screen->geometry();
+    int screenHeight = screen->size().height()+geometry.y();
+
     QObject::connect(&notificationModel, &QAbstractItemModel::rowsInserted, [&](const QModelIndex &parent, int first, int last) {
         for (int i = first; i <= last; ++i) {
             QQmlComponent component(&Qengine, QUrl(QStringLiteral("qrc:/NotificationWindow.qml")));

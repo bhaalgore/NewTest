@@ -7,7 +7,6 @@ Window {
     property string title: ""
     property string message: ""
     property string type: ""
-    property int pos:0
     flags: Qt.FramelessWindowHint
     height:75
     width: 300
@@ -15,9 +14,9 @@ Window {
     maximumWidth: width
     visible:true
     x:Screen.width - width - 10
-    y:Screen.height - height - pos
+    y:Screen.height - height
     onTypeChanged: {
-        console.log(y)
+        //console.log(y)
             switch (type) {
                 case "NOTIFY":
                     color = Qt.rgba(176/255, 68/255, 68/255, 0.9);
