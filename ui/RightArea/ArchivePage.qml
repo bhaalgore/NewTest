@@ -1,6 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
 import QtQuick.Controls 1.4
+import QtQuick.Controls 2.15
+import QtQuick 2.15
 import "../Notification"
 
 Rectangle {
@@ -30,13 +30,15 @@ Rectangle {
         anchors {
                 top: parent.top
                 topMargin: 50
+                bottomMargin:20
                 horizontalCenter: parent.horizontalCenter
             }
         Row {
             Button {
                 id: dateButton
+                width:80
+                height:30
                 text: "Select date"
-
                 onClicked: {
                     datePopup.open()
                 }
@@ -62,8 +64,9 @@ Rectangle {
 
             TextField {
                 id: dateInput
+                width:120
+                height:30
                 placeholderText: "Selected date"
-                textColor: "red"
                 readOnly: true
             }
         }
