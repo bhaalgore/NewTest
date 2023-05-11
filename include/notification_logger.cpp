@@ -29,7 +29,8 @@ namespace LogicPlugin {
         return query.exec();
     }
 
-    bool NotificationLogger::insert(QString type, QString title, QString descript, QDate date, QString time)
+    bool NotificationLogger::insert(
+     QString type, QString title, QString descript, QDate date, QString time)
     {
         QSqlQuery query(_db);
         query.prepare("INSERT INTO notification(Type, Title, Description, Date, Time) "

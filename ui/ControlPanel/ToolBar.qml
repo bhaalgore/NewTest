@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 
 Rectangle {
-    id:wrapper
+    id: wrapper
     anchors.top: parent.top
     width: mainWindow.width - leftField.width
     height: 50
@@ -12,10 +12,13 @@ Rectangle {
         anchors.fill: parent
         DragHandler {
             acceptedDevices: PointerDevice.GenericPointer
-            grabPermissions:  PointerHandler.CanTakeOverFromItems | PointerHandler.CanTakeOverFromHandlersOfDifferentType | PointerHandler.ApprovesTakeOverByAnything
-            onActiveChanged: if (active) mainWindow.startSystemMove()
+            grabPermissions: PointerHandler.CanTakeOverFromItems
+                             | PointerHandler.CanTakeOverFromHandlersOfDifferentType
+                             | PointerHandler.ApprovesTakeOverByAnything
+            onActiveChanged: if (active)
+                                 mainWindow.startSystemMove()
         }
-        }
+    }
     RowLayout {
         anchors {
             top: parent.top
@@ -26,14 +29,14 @@ Rectangle {
 
         Rectangle {
             id: recMinimizeWrapper
-            Layout.preferredWidth:  25
-            Layout.preferredHeight:  25
-            color:"transparent"
+            Layout.preferredWidth: 25
+            Layout.preferredHeight: 25
+            color: "transparent"
             Image {
                 id: minimizeImage
                 source: "qrc:/ui/assets/minimizeIcon.svg"
-                Layout.preferredWidth:  18
-                Layout.preferredHeight:  2
+                Layout.preferredWidth: 18
+                Layout.preferredHeight: 2
                 anchors.centerIn: recMinimizeWrapper
             }
             MouseArea {
@@ -54,14 +57,14 @@ Rectangle {
 
         Rectangle {
             id: recQuitWrapper
-            Layout.preferredWidth:  25
-            Layout.preferredHeight:  25
-            color:"transparent"
+            Layout.preferredWidth: 25
+            Layout.preferredHeight: 25
+            color: "transparent"
             Image {
                 id: closeImage
                 source: "qrc:/ui/assets/close.svg"
-                Layout.preferredWidth:  16
-                Layout.preferredHeight:  17
+                Layout.preferredWidth: 16
+                Layout.preferredHeight: 17
                 anchors.centerIn: recQuitWrapper
                 MouseArea {
                     hoverEnabled: true
@@ -75,7 +78,7 @@ Rectangle {
 
                     anchors.fill: parent
                     onClicked: {
-                        Qt.quit();
+                        Qt.quit()
                     }
                 }
             }

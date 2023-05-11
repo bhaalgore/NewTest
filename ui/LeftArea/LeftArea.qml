@@ -16,7 +16,7 @@ Rectangle {
         spacing: 51
 
         AppName {
-        id: appName
+            id: appName
         }
 
         // Menu

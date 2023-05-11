@@ -1,6 +1,5 @@
 import QtQuick 2.15
 
-
 Rectangle {
     id: controlPanel
     anchors {
@@ -9,7 +8,7 @@ Rectangle {
         top: parent.top
     }
     color: "#36384D"
-    height: parent.height / 20;
+    height: parent.height / 20
 
     Rectangle {
         id: userPanel

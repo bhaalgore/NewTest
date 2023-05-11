@@ -8,10 +8,9 @@ std::optional<uint16_t> LogicPlugin::TypeManager::addType(const QString &name)
 {
     if (name.isEmpty())
         return std::nullopt;
-    const auto it = std::find_if(_types.begin(), _types.end(),
-                                 [&name](const auto &element) {
-                                     return element.first == name;
-                                 });
+    const auto it = std::find_if(_types.begin(), _types.end(), [&name](const auto &element) {
+        return element.first == name;
+    });
     if (it != _types.end()) // если тип уедомления с названием name уже существует, то мы ничего
                             // не добавляем в структуру
         return std::nullopt;
@@ -21,10 +20,9 @@ std::optional<uint16_t> LogicPlugin::TypeManager::addType(const QString &name)
 
 const QString LogicPlugin::TypeManager::stringType(const uint16_t &value)
 {
-    const auto it = std::find_if(_types.begin(), _types.end(),
-                                 [&value](const auto &element) {
-                                     return element.second == value;
-                                 });
+    const auto it = std::find_if(_types.begin(), _types.end(), [&value](const auto &element) {
+        return element.second == value;
+    });
     if (it != _types.end())
         return it->first;
     return "";
@@ -32,10 +30,9 @@ const QString LogicPlugin::TypeManager::stringType(const uint16_t &value)
 
 bool LogicPlugin::TypeManager::isTypeExist(const uint16_t &value)
 {
-    const auto it = std::find_if(_types.begin(), _types.end(),
-                                 [&value](const auto &element) {
-                                     return element.second == value;
-                                 });
+    const auto it = std::find_if(_types.begin(), _types.end(), [&value](const auto &element) {
+        return element.second == value;
+    });
     if (it != _types.end())
         return true;
     return false;

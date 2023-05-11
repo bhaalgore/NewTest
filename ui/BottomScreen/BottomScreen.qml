@@ -4,29 +4,28 @@ import QtPositioning 5.12
 
 Rectangle {
     id: bottomScreen
-    anchors{
+    anchors {
         left: parent.left
         right: parent.right
         top: controlPanel.bottom
         bottom: parent.bottom
     }
-   // color: "red"
+    // color: "red"
     Image {
         anchors.fill: parent
         source: "qrc:/ui/assets/map.png"
     }
 
-//    Plugin {
-//        id:mapPlugin
-//        name: "osm"
+    //    Plugin {
+    //        id:mapPlugin
+    //        name: "osm"
 
-//    }
+    //    }
 
-//    Map {
-//        anchors.fill:parent
-//        plugin: mapPlugin
-//        center: QtPositioning.coordinate(59.91, 10.75) // Tomsk
-//        zoomLevel: 14
-//    }
-
+    //    Map {
+    //        anchors.fill:parent
+    //        plugin: mapPlugin
+    //        center: QtPositioning.coordinate(59.91, 10.75) // Tomsk
+    //        zoomLevel: 14
+    //    }
 }

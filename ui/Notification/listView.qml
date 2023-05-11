@@ -20,7 +20,7 @@ Window {
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                mainWindow.startSystemMove();
+                mainWindow.startSystemMove()
             }
         }
     }

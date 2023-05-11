@@ -6,7 +6,8 @@ class HistoryModel : public QSqlTableModel
 {
     Q_OBJECT
 public:
-    enum Roles {
+    enum Roles
+    {
         TitleRole = Qt::UserRole + 1,
         MessageRole,
         TypeRole,
@@ -14,8 +15,7 @@ public:
         TimeRole
     };
 
-    HistoryModel(QObject *parent = nullptr)
-        : QSqlTableModel(parent)
+    HistoryModel(QObject *parent = nullptr) : QSqlTableModel(parent)
     {
         setTable("notification");
         QDate myDate = QDate::currentDate();
@@ -56,13 +56,12 @@ public:
             return QVariant();
         }
     }
-    Q_INVOKABLE void selectByDate(const QString& dateStr)
+    Q_INVOKABLE void selectByDate(const QString &dateStr)
     {
         QString arg = dateStr + '%';
         setFilter(QString("Date LIKE '%1'").arg(arg));
         select();
     }
 };
-
 
 #endif // HISTORY_MODEL_H

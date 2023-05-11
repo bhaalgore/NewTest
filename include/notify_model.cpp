@@ -42,12 +42,12 @@ QHash<int, QByteArray> LogicPlugin::NotificationModel::roleNames() const
 }
 
 void LogicPlugin::NotificationModel::addNotification(
-    QPointer<LogicPlugin::AbstractNotification> notification)
+ QPointer<LogicPlugin::AbstractNotification> notification)
 {
     beginInsertRows(QModelIndex(), _notifications.count(), _notifications.count());
     _notifications.push_back(notification);
 
-    logger.insert(notification->type(), notification->title(),notification->description(),
+    logger.insert(notification->type(), notification->title(), notification->description(),
                   QDate::currentDate(), QTime::currentTime().toString("hh:mm:ss"));
     endInsertRows();
 }
@@ -63,11 +63,12 @@ void LogicPlugin::NotificationModel::removeNotification(int index)
 
 void LogicPlugin::NotificationModel::timerEvent(QTimerEvent *event)
 {
-    if(_timerId!=event->timerId())
+    if (_timerId != event->timerId())
         return;
-    if(count()>10)
+    if (count() > 10)
         return;
-    auto myImpl = new LogicPlugin::NotificationEntity("test", "Очень важная информация. Очень важная информация.", 1);
+    auto myImpl = new LogicPlugin::NotificationEntity(
+     "test", "Очень важная информация. Очень важная информация.", 1);
     addNotification(myImpl);
 }
 void LogicPlugin::NotificationModel::clearNotifications()

@@ -9,8 +9,7 @@ Rectangle {
     id: section
     height: 36
     width: menu.width
-    color: (rightFieldLoader.source
-            == qrcRightField) ? "#32343C" : "transparent"
+    color: (rightFieldLoader.source == qrcRightField) ? "#32343C" : "transparent"
     radius: 5
 
     Image {
@@ -27,11 +26,10 @@ Rectangle {
     }
 
     ColorOverlay {
-           anchors.fill: icon
-           source: icon
-           color: (rightFieldLoader.source
-                   == qrcRightField) ? "#0BBCD1" : "#DDDDDD"
-           antialiasing: true
+        anchors.fill: icon
+        source: icon
+        color: (rightFieldLoader.source == qrcRightField) ? "#0BBCD1" : "#DDDDDD"
+        antialiasing: true
     }
 
     Text {
@@ -40,10 +38,8 @@ Rectangle {
         font.pixelSize: 16
         font.family: "Arial"
         font.letterSpacing: 1
-        font.weight: (rightFieldLoader.source
-                      == qrcRightField) ? Font.DemiBold : Font.ExtraLight
-        color: (rightFieldLoader.source
-                == qrcRightField) ? "#0BBCD1" : "#DDDDDD"
+        font.weight: (rightFieldLoader.source == qrcRightField) ? Font.DemiBold : Font.ExtraLight
+        color: (rightFieldLoader.source == qrcRightField) ? "#0BBCD1" : "#DDDDDD"
         anchors {
             left: icon.right
             verticalCenter: parent.verticalCenter

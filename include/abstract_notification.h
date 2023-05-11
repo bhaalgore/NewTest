@@ -12,7 +12,7 @@ namespace LogicPlugin {
      * \brief Класс, от которого могут наследоваться юзеры библиотеки, чтобы создать новый класс
      * уведомления, если потребуется расширить функционал
      */
-    class  AbstractNotification: public QObject
+    class AbstractNotification : public QObject
     {
     public:
         /*!
@@ -27,17 +27,17 @@ namespace LogicPlugin {
         /*!
          * \brief Метод, возвращающий значения переменной _title
          */
-       Q_INVOKABLE QString title() const;
+        Q_INVOKABLE QString title() const;
 
         /*!
          * \brief Метод, возвращающий значения переменной _description
          */
-       Q_INVOKABLE QString description() const;
+        Q_INVOKABLE QString description() const;
 
         /*!
          * \brief Метод, возвращающий тип уведомления
          */
-       Q_INVOKABLE QString type() const;
+        Q_INVOKABLE QString type() const;
 
         /*!
          * \brief Метод, меняющий значение переменной _title
