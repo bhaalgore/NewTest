@@ -91,7 +91,7 @@ Rectangle {
             title: model.title
             message: model.message
             type: model.type
-            date: model.time
+            time: model.time
         }
     }
     Rectangle {
