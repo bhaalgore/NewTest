@@ -36,10 +36,10 @@ ApplicationWindow {
 
         PagesHandler {
             id: rightField
+
             ToolBar{
-
+              id: toolBar
             }
-
             Loader {
                 id: rightFieldLoader
                 source: "qrc:/ui/RightArea/MainPage.qml"

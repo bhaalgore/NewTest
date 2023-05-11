@@ -5,7 +5,6 @@ import "../Notification"
 Rectangle {
     id: root
     color: "transparent"
-
     Text {
         id: header
         text: "Архив"
@@ -25,21 +24,18 @@ Rectangle {
         }
         color: "#DDDDDD"
     }
+
     ListView {
         id: notifyList
         spacing: 20
         model: HistoryModel
-        height: parent.height
-        width: parent.width
+        height: root.height
+        width: root.width
         clip:true
-        anchors{
-            top: header.top
-            left: header.left
+        anchors {
+            top: parent.bottom
             topMargin: 35
             leftMargin: 30
-        }
-        ScrollBar {
-
         }
         delegate: Notification {
             title: model.title
