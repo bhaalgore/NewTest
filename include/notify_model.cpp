@@ -4,7 +4,7 @@ LogicPlugin::NotificationModel::NotificationModel(QObject *parent) : QAbstractLi
 {
     logger.openDatabase("QSQLITE", "./notify_db.db");
     logger.createTable();
-    _timerId = startTimer(1000);
+    _timerId = startTimer(4000);
 }
 
 int LogicPlugin::NotificationModel::rowCount(const QModelIndex &parent) const
@@ -72,20 +72,18 @@ void LogicPlugin::NotificationModel::timerEvent(QTimerEvent *event)
     std::uniform_int_distribution<int>  distr(0, 3);
     int num = distr(generator);
     auto myImpl1 = new LogicPlugin::NotificationEntity(
-        "test", "Очень важная информация. Очень важная информация.", 1);
+        "Обнаружена цель в SportCenter", "Очень важная информация. Очень важная информация.", 1);
     auto myImpl2 = new LogicPlugin::NotificationEntity(
-        "test", "Очень важная информация. Очень важная информация.", 1);
+        "Камера не доступна!", "Очень важная информация. Очень важная информация.", 2);
     auto myImpl3 = new LogicPlugin::NotificationEntity(
-        "test", "Очень важная информация. Очень важная информация.", 1);
+        "Высокий уровень шума!", "Очень важная информация. Очень важная информация.", 3);
     switch(num){
     case 1:
         addNotification(myImpl1);
         break;
     case 2:
-
         addNotification(myImpl2);
         break;
-
      case 3:
 
         addNotification(myImpl3);

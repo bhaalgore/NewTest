@@ -73,17 +73,17 @@ int main(int argc, char *argv[])
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     LogicPlugin::TypeManager::addType("test");
-    auto myImpl = new LogicPlugin::NotificationEntity(
-     "test", "Очень важная информация. Очень важная информация.", 1);
-    notificationModel.addNotification(myImpl);
-    auto myImpl1 = new LogicPlugin::NotificationEntity(
-     "test", "Очень важная информация. Очень важная информация.", 2);
-    notificationModel.addNotification(myImpl1);
-    auto myImpl2 = new LogicPlugin::NotificationEntity(
-     "test", "Очень важная информация. Очень важная информация.", 3);
-    notificationModel.addNotification(myImpl2);
-    auto myImpl3 = new LogicPlugin::NotificationEntity(
-     "test", "Очень важная информация. Очень важная информация.", 0);
-    notificationModel.addNotification(myImpl3);
+//    auto myImpl = new LogicPlugin::NotificationEntity(
+//     "test", "Очень важная информация. Очень важная информация.", 1);
+//    notificationModel.addNotification(myImpl);
+//    auto myImpl1 = new LogicPlugin::NotificationEntity(
+//     "test", "Очень важная информация. Очень важная информация.", 2);
+//    notificationModel.addNotification(myImpl1);
+//    auto myImpl2 = new LogicPlugin::NotificationEntity(
+//     "test", "Очень важная информация. Очень важная информация.", 3);
+//    notificationModel.addNotification(myImpl2);
+//    auto myImpl3 = new LogicPlugin::NotificationEntity(
+//     "test", "Очень важная информация. Очень важная информация.", 0);
+//    notificationModel.addNotification(myImpl3);
     return app.exec();
 }
