@@ -19,8 +19,6 @@ ApplicationWindow {
 
     minimumWidth: width
     minimumHeight: height
-    maximumWidth: width
-    maximumHeight: height
 
     visible: true
     color: "transparent"

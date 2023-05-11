@@ -10,14 +10,15 @@ public:
         TitleRole = Qt::UserRole + 1,
         MessageRole,
         TypeRole,
-        DateRole
+        DateRole,
+        TimeRole
     };
 
     HistoryModel(QObject *parent = nullptr)
         : QSqlTableModel(parent)
     {
         setTable("notification");
-        select();
+        //select();
     }
 
     QHash<int, QByteArray> roleNames() const override
@@ -27,6 +28,7 @@ public:
         roles[MessageRole] = "message";
         roles[TypeRole] = "type";
         roles[DateRole] = "date";
+        roles[TimeRole] = "time";
         return roles;
     }
 
@@ -44,14 +46,17 @@ public:
         case TypeRole:
             return record.value("Type");
         case DateRole:
-            return record.value("Date");       
+            return record.value("Date");
+        case TimeRole:
+            return record.value("Time");
         default:
             return QVariant();
         }
     }
     Q_INVOKABLE void selectByDate(const QString& dateStr)
     {
-        setFilter(QString("Date='%1'").arg(dateStr));
+        QString arg = dateStr + '%';
+        setFilter(QString("Date LIKE '%1'").arg(arg));
         select();
     }
 };

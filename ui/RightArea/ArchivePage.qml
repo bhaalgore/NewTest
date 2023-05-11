@@ -51,6 +51,7 @@ Rectangle {
                 contentItem: Calendar {
                     onSelectedDateChanged: {
                         dateInput.text = selectedDate.toISOString().slice(0, 10);
+                        console.log(selectedDate)
                         HistoryModel.selectByDate(selectedDate.toISOString().slice(0, 10));
                         datePopup.close();
                     }
@@ -89,7 +90,7 @@ Rectangle {
             title: model.title
             message: model.message
             type: model.type
-            date: model.date
+            date: model.time
         }
     }
 
