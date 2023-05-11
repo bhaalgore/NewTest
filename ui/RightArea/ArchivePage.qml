@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Controls 2.15
 import "../Notification"
 
 Rectangle {
@@ -24,18 +25,20 @@ Rectangle {
         }
         color: "#DDDDDD"
     }
-
     ListView {
         id: notifyList
         spacing: 20
         model: HistoryModel
         height: parent.height
         width: parent.width
+        clip:true
         anchors{
             top: header.top
             left: header.left
             topMargin: 35
             leftMargin: 30
+        }
+        ScrollBar {
 
         }
         delegate: Notification {

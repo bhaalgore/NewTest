@@ -10,9 +10,11 @@ Rectangle {
     property string type: ""
     property string date: ""
 
+
     height: 60
-    width: root.width - 85
+    width: 550
     visible:true
+    radius: 10
 
     Component.onCompleted: {
             switch (type) {
@@ -39,7 +41,7 @@ Rectangle {
             top:parent.top
             right:parent.right
             topMargin: 14
-            rightMargin: 22
+            rightMargin: 14
         }
 
         MouseArea {
@@ -47,41 +49,38 @@ Rectangle {
             onClicked: rec.visible = false
 
         }
-
-
     }
 
     ColumnLayout {
         id: columnLayout
         width:parent.width
 
+        Text {
+            text: title
+            Layout.leftMargin: 7
+            Layout.topMargin: 10
+            color: "#DDDDDD"
+            font.pointSize: ((rec.height/5) + (rec.width /10))/5
+            font.weight: "DemiBold"
+            font.family: "OpenSans"
+        }
 
+        RowLayout {
             Text {
-                text: title
+                text: message
                 Layout.leftMargin: 7
-                Layout.topMargin: 10
                 color: "#DDDDDD"
-                font.pointSize: ((rec.height/5) + (rec.width /10))/4
-                font.weight: "DemiBold"
+                font.pointSize: ((rec.height/5) + (rec.width /10))/6
                 font.family: "OpenSans"
             }
-
-
-        Text {
-            text: message
-            Layout.leftMargin: 7
-            color: "#DDDDDD"
-            font.pointSize: ((rec.height/5) + (rec.width /10))/6
-            font.family: "OpenSans"
+            Text {
+                text: date
+                Layout.leftMargin: 7
+                color: "#DDDDDD"
+                font.pointSize: ((rec.height/5) + (rec.width /10))/6
+                font.family: "OpenSans"
+            }
         }
-        Text {
-            text: date
-            Layout.leftMargin: 7
-            color: "red"
-            font.pointSize: ((rec.height/5) + (rec.width /10))/6
-            font.family: "OpenSans"
-        }
-
     }
 
 }
