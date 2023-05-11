@@ -67,9 +67,31 @@ void LogicPlugin::NotificationModel::timerEvent(QTimerEvent *event)
         return;
     if (count() > 10)
         return;
-    auto myImpl = new LogicPlugin::NotificationEntity(
-     "test", "Очень важная информация. Очень важная информация.", 1);
-    addNotification(myImpl);
+    std::random_device                  rand_dev;
+    std::mt19937                        generator(rand_dev());
+    std::uniform_int_distribution<int>  distr(0, 3);
+    int num = distr(generator);
+    auto myImpl1 = new LogicPlugin::NotificationEntity(
+        "test", "Очень важная информация. Очень важная информация.", 1);
+    auto myImpl2 = new LogicPlugin::NotificationEntity(
+        "test", "Очень важная информация. Очень важная информация.", 1);
+    auto myImpl3 = new LogicPlugin::NotificationEntity(
+        "test", "Очень важная информация. Очень важная информация.", 1);
+    switch(num){
+    case 1:
+        addNotification(myImpl1);
+        break;
+    case 2:
+
+        addNotification(myImpl2);
+        break;
+
+     case 3:
+
+        addNotification(myImpl3);
+        break;
+    }
+
 }
 void LogicPlugin::NotificationModel::clearNotifications()
 {

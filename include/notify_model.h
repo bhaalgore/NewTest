@@ -7,7 +7,7 @@
 #include <QAbstractListModel>
 #include <QPointer>
 #include <QTimerEvent>
-
+#include <random>
 namespace LogicPlugin {
     /*!
      * \brief Класс, который определяет интерфейс, используемый для взаимодействия с компонентами
