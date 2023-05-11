@@ -11,8 +11,8 @@ Window {
 
     flags: Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool
 
-    height: 75
-    width: 300
+    height: 80
+    width: 360
     maximumHeight: height
     maximumWidth: width
 
@@ -20,7 +20,7 @@ Window {
     y:Screen.height - height
 
     visible:true
-    opacity: 0.8
+
     onTypeChanged: {
             switch (type) {
                 case "NOTIFY":
@@ -37,10 +37,10 @@ Window {
                     break;
             }
         }
-   Timer {
-           interval: 15000; running: true; repeat: false
-           onTriggered: notification_window.close
-       }
+    Timer {
+        interval: 15000; running: true; repeat: false
+        onTriggered: notification_window.close
+    }
 
     Image {
         id: closeNotificationIcon
@@ -82,15 +82,21 @@ Window {
                 family: "Arial"
             }
         }
-        Text {
-            text: message
-            color: "#DDDDDD"
-            font {
-                pixelSize: 16
-                family: "Arial"
-            }
 
-            wrapMode: Text.WordWrap
+        Item {
+            width: 300
+            Text {
+                text: message
+                width: parent.width
+                color: "#DDDDDD"
+                font {
+                    pixelSize: 16
+                    family: "Arial"
+                }
+
+                wrapMode: Text.WordWrap
+            }
         }
+
     }
 }
