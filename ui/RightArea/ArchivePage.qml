@@ -82,6 +82,7 @@ Rectangle {
         anchors {
             top: header.bottom
             left: header.left
+            bottom:footer.top
             topMargin: 35
             leftMargin: 30
         }
@@ -92,7 +93,11 @@ Rectangle {
             date: model.date
         }
     }
-
-
-
+    Rectangle {
+        id:footer
+        width: root.width
+        height: 10
+        anchors.bottom: root.bottom
+        color:"transparent"
+    }
 }
