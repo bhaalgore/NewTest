@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Controls 1.4
 import "../Notification"
 
 Rectangle {
@@ -24,7 +25,50 @@ Rectangle {
         }
         color: "#DDDDDD"
     }
+    Row {
+        spacing: 10
+        anchors {
+                top: parent.top
+                topMargin: 50
+                horizontalCenter: parent.horizontalCenter
+            }
+        Row {
+            Button {
+                id: dateButton
+                text: "Select date"
 
+                onClicked: {
+                    datePopup.open()
+                }
+            }
+            Popup {
+                id: datePopup
+                modal: true
+                width: 300
+                height: 300
+                contentItem: Calendar {
+                    onSelectedDateChanged: {
+                        dateInput.text = selectedDate.toISOString().slice(0, 10);
+                        HistoryModel.selectByDate(selectedDate.toISOString().slice(0, 10));
+                        datePopup.close();
+                    }
+                }
+            }
+        }
+        Row {
+            anchors{
+                right:parent.right
+            }
+
+            TextField {
+                id: dateInput
+                placeholderText: "Selected date"
+                textColor: "red"
+                readOnly: true
+            }
+        }
+
+    }
     ListView {
         id: notifyList
         spacing: 20
@@ -45,5 +89,7 @@ Rectangle {
             date: model.date
         }
     }
+
+
 
 }
