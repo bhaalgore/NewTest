@@ -18,7 +18,10 @@ public:
         : QSqlTableModel(parent)
     {
         setTable("notification");
-        //select();
+        QDate myDate = QDate::currentDate();
+        QString myDateString = myDate.toString("yyyy-MM-dd");
+        setFilter(QString("Date LIKE '%1'").arg(myDateString));
+        select();
     }
 
     QHash<int, QByteArray> roleNames() const override
