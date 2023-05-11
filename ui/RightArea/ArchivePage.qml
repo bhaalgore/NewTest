@@ -33,7 +33,8 @@ Rectangle {
         width: root.width
         clip:true
         anchors {
-            top: parent.bottom
+            top: header.bottom
+            left: header.left
             topMargin: 35
             leftMargin: 30
         }
@@ -44,4 +45,5 @@ Rectangle {
             date: model.date
         }
     }
+
 }
