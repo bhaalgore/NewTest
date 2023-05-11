@@ -32,33 +32,12 @@ Rectangle {
             }
         }
 
-    Image {
-        id: closeNotificationIcon
-        source: "qrc:/ui/assets/close.svg"
-        width:13
-        height:14
-        anchors{
-            top:parent.top
-            right:parent.right
-            topMargin: 14
-            rightMargin: 14
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: rec.visible = false
-
-        }
-    }
-
     ColumnLayout {
         id: columnLayout
         width:parent.width
-
         Text {
             text: title
             Layout.leftMargin: 7
-            Layout.topMargin: 10
             color: "#DDDDDD"
             font.pointSize: ((rec.height/5) + (rec.width /10))/5
             font.weight: "DemiBold"

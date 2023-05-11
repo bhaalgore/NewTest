@@ -48,7 +48,7 @@ void LogicPlugin::NotificationModel::addNotification(
     _notifications.push_back(notification);
 
     logger.insert(notification->type(), notification->title(),notification->description(),
-                  QDate::currentDate(), QTime::currentTime());
+                  QDate::currentDate(), QTime::currentTime().toString("hh:mm:ss"));
     endInsertRows();
 }
 

@@ -34,7 +34,8 @@ Rectangle {
                 horizontalCenter: parent.horizontalCenter
             }
         Row {
-            Button {
+            Button
+            {
                 id: dateButton
                 width:80
                 height:30
@@ -51,7 +52,6 @@ Rectangle {
                 contentItem: Calendar {
                     onSelectedDateChanged: {
                         dateInput.text = selectedDate.toISOString().slice(0, 10);
-                        console.log(selectedDate)
                         HistoryModel.selectByDate(selectedDate.toISOString().slice(0, 10));
                         datePopup.close();
                     }

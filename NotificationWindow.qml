@@ -16,29 +16,31 @@ Window {
     maximumHeight: height
     maximumWidth: width
 
-    x:Screen.width - width - 10
-    y:Screen.height - height
+    x: Screen.width - width - 10
+    y: Screen.height - height
 
-    visible:true
+    visible: true
 
     onTypeChanged: {
-            switch (type) {
-                case "NOTIFY":
-                    color = Qt.rgba(176/255, 68/255, 68/255, 0.9);
-                    break;
-                case "WARNING":
-                    color = Qt.rgba(33/255, 33/255, 49/255, 0.9);
-                    break;
-                case "ALARM":
-                    color = Qt.rgba(176/255, 127/255, 0, 0.9);
-                    break;
-                case "DEFAULT":
-                    color = Qt.rgba(176/255, 68/255, 68/255, 0.5);
-                    break;
-            }
+        switch (type) {
+        case "NOTIFY":
+            color = Qt.rgba(176 / 255, 68 / 255, 68 / 255, 0.9)
+            break
+        case "WARNING":
+            color = Qt.rgba(33 / 255, 33 / 255, 49 / 255, 0.9)
+            break
+        case "ALARM":
+            color = Qt.rgba(176 / 255, 127 / 255, 0, 0.9)
+            break
+        case "DEFAULT":
+            color = Qt.rgba(176 / 255, 68 / 255, 68 / 255, 0.5)
+            break
         }
+    }
     Timer {
-        interval: 15000; running: true; repeat: false
+        interval: 15000
+        running: true
+        repeat: false
         onTriggered: notification_window.close
     }
 
@@ -47,11 +49,11 @@ Window {
         source: "qrc:/ui/assets/close.svg"
         width: 14
         height: 14
-//        fillMode: Image.PreserveAspectFit
 
+        //        fillMode: Image.PreserveAspectFit
         anchors {
-            top:parent.top
-            right:parent.right
+            top: parent.top
+            right: parent.right
             topMargin: 14
             rightMargin: 14
         }
@@ -68,7 +70,6 @@ Window {
         anchors {
             top: parent.top
             left: parent.left
-
             topMargin: 8
             leftMargin: 14
         }
@@ -97,6 +98,5 @@ Window {
                 wrapMode: Text.WordWrap
             }
         }
-
     }
 }

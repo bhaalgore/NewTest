@@ -44,7 +44,7 @@ namespace LogicPlugin {
          * \param date - Дата
          * \return Возвращает true, если запрос успешно выполнен, иначе false
          */
-        bool insert(QString type, QString tytle, QString descript, QDate date, QTime time);
+        bool insert(QString type, QString tytle, QString descript, QDate date, QString time);
 
         /*!
          * \brief close Метод закрывает соединение с базой данных
